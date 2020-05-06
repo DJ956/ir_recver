@@ -93,6 +93,20 @@
 #define LED_1_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
 #define LED_1_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
 
+// get/set IR_LED aliases
+#define IR_LED_TRIS                 TRISAbits.TRISA3
+#define IR_LED_LAT                  LATAbits.LATA3
+#define IR_LED_PORT                 PORTAbits.RA3
+#define IR_LED_ANS                  ANSELAbits.ANSA3
+#define IR_LED_SetHigh()            do { LATAbits.LATA3 = 1; } while(0)
+#define IR_LED_SetLow()             do { LATAbits.LATA3 = 0; } while(0)
+#define IR_LED_Toggle()             do { LATAbits.LATA3 = ~LATAbits.LATA3; } while(0)
+#define IR_LED_GetValue()           PORTAbits.RA3
+#define IR_LED_SetDigitalInput()    do { TRISAbits.TRISA3 = 1; } while(0)
+#define IR_LED_SetDigitalOutput()   do { TRISAbits.TRISA3 = 0; } while(0)
+#define IR_LED_SetAnalogMode()      do { ANSELAbits.ANSA3 = 1; } while(0)
+#define IR_LED_SetDigitalMode()     do { ANSELAbits.ANSA3 = 0; } while(0)
+
 // get/set RB2 procedures
 #define RB2_SetHigh()            do { LATBbits.LATB2 = 1; } while(0)
 #define RB2_SetLow()             do { LATBbits.LATB2 = 0; } while(0)

@@ -1,5 +1,5 @@
 
-# 1 "mcc_generated_files/eusart.c"
+# 1 "sender.c"
 
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -4207,8 +4207,11 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 15 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
+# 144 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+
+# 156
+void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdint.h"
 typedef signed char int8_t;
@@ -4296,6 +4299,29 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
+# 15 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 29 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 15 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
 # 75 "mcc_generated_files/eusart.h"
 typedef union {
 struct {
@@ -4337,118 +4363,79 @@ void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 397
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 
-# 52 "mcc_generated_files/eusart.c"
-volatile eusart_status_t eusartRxLastError;
+# 70 "mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
 
-# 58
-void (*EUSART_FramingErrorHandler)(void);
-void (*EUSART_OverrunErrorHandler)(void);
-void (*EUSART_ErrorHandler)(void);
+# 83
+void OSCILLATOR_Initialize(void);
 
-void EUSART_DefaultFramingErrorHandler(void);
-void EUSART_DefaultOverrunErrorHandler(void);
-void EUSART_DefaultErrorHandler(void);
+# 95
+void WDT_Initialize(void);
 
-void EUSART_Initialize(void)
-{
+# 15 "sender.h"
+void pwm_out();
+void high_bit();
+void low_bit();
+void send_reader();
+void send_data(uint8_t *data, uint8_t size);
+void send_data_ch(char *data, uint8_t size);
 
+# 4 "sender.c"
+void pwm_out(){
+uint8_t i;
+for(i = 0; i < 8; i++){
+do { LATAbits.LATA3 = 1; } while(0);
+_delay((unsigned long)((25)*(32000000/4000000.0)));
+do { LATAbits.LATA3 = 0; } while(0);
+_delay((unsigned long)((5)*(32000000/4000000.0)));
+}
+}
 
-
-BAUDCON = 0x08;
-
-
-RCSTA = 0x90;
-
-
-TXSTA = 0x24;
-
-
-SPBRGL = 0x40;
-
-
-SPBRGH = 0x03;
-
-
-EUSART_SetFramingErrorHandler(EUSART_DefaultFramingErrorHandler);
-EUSART_SetOverrunErrorHandler(EUSART_DefaultOverrunErrorHandler);
-EUSART_SetErrorHandler(EUSART_DefaultErrorHandler);
-
-eusartRxLastError.status = 0;
+# 19
+void send_reader(){
+uint8_t width = 0;
+while(width < 3400){
+high_bit();
+_delay((unsigned long)((1)*(32000000/4000000.0)));
+}
+width = 0;
+while(width < 1700){
+low_bit();
+_delay((unsigned long)((1)*(32000000/4000000.0)));
+}
 
 }
 
-bool EUSART_is_tx_ready(void)
-{
-return (bool)(PIR1bits.TXIF && TXSTAbits.TXEN);
+void send_data(uint8_t *data, uint8_t size){
+uint8_t i;
+for(i = 0; i < size; i++){
+if(data[i] == 0){
+low_bit();
+}else{
+high_bit();
+}
+}
 }
 
-bool EUSART_is_rx_ready(void)
-{
-return (bool)(PIR1bits.RCIF);
+void send_data_ch(char *data, uint8_t size){
+uint8_t i;
+for(i = 0; i < size; i++){
+if(data[i] == '0'){
+low_bit();
+}else{
+high_bit();
+}
+}
 }
 
-bool EUSART_is_tx_done(void)
-{
-return TXSTAbits.TRMT;
+void high_bit(){
+pwm_out();
+do { LATAbits.LATA3 = 0; } while(0);
+_delay((unsigned long)((425)*(32000000/4000000.0)));
 }
 
-eusart_status_t EUSART_get_last_status(void){
-return eusartRxLastError;
+void low_bit(){
+pwm_out();
+do { LATAbits.LATA3 = 0; } while(0);
+_delay((unsigned long)((1275)*(32000000/4000000.0)));
 }
-
-uint8_t EUSART_Read(void)
-{
-while(!PIR1bits.RCIF)
-{
-}
-
-eusartRxLastError.status = 0;
-
-if(1 == RCSTAbits.OERR)
-{
-
-
-RCSTAbits.CREN = 0;
-RCSTAbits.CREN = 1;
-}
-
-return RCREG;
-}
-
-void EUSART_Write(uint8_t txData)
-{
-while(0 == PIR1bits.TXIF)
-{
-}
-
-TXREG = txData;
-}
-
-
-
-
-void EUSART_DefaultFramingErrorHandler(void){}
-
-void EUSART_DefaultOverrunErrorHandler(void){
-
-
-RCSTAbits.CREN = 0;
-RCSTAbits.CREN = 1;
-
-}
-
-void EUSART_DefaultErrorHandler(void){
-}
-
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void)){
-EUSART_FramingErrorHandler = interruptHandler;
-}
-
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void)){
-EUSART_OverrunErrorHandler = interruptHandler;
-}
-
-void EUSART_SetErrorHandler(void (* interruptHandler)(void)){
-EUSART_ErrorHandler = interruptHandler;
-}
-
