@@ -4207,10 +4207,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 144 "mcc_generated_files/pin_manager.h"
+# 197 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 156
+# 209
 void PIN_MANAGER_IOC(void);
 
 # 55 "mcc_generated_files/pin_manager.c"
@@ -4222,12 +4222,12 @@ LATA = 0x00;
 LATB = 0x00;
 
 # 66
-TRISA = 0xF3;
-TRISB = 0xFF;
+TRISA = 0x32;
+TRISB = 0x7F;
 
 # 72
-ANSELB = 0xDA;
-ANSELA = 0x11;
+ANSELB = 0x5A;
+ANSELA = 0x10;
 
 # 78
 WPUB = 0x00;

@@ -13,41 +13,46 @@
 %PSECTS
 $dist/default/production\ir_recver.X.production.o
 cinit CODE 0 7F5 7F5 B 2
-text1 CODE 0 5FD 5FD 3D 2
-text2 CODE 0 55E 55E 2F 2
-text3 CODE 0 538 538 26 2
-text4 CODE 0 63A 63A 40 2
-text5 CODE 0 6D3 6D3 60 2
-text6 CODE 0 733 733 C2 2
-text7 CODE 0 4C5 4C5 6 2
-text8 CODE 0 4CB 4CB A 2
-text9 CODE 0 58D 58D 34 2
-text10 CODE 0 5C1 5C1 3C 2
-text11 CODE 0 4AF 4AF 4 2
-text12 CODE 0 4EE 4EE F 2
-text13 CODE 0 4E1 4E1 D 2
-text14 CODE 0 4AB 4AB 4 2
-text15 CODE 0 4FD 4FD 18 2
-text16 CODE 0 4D5 4D5 C 2
-text17 CODE 0 515 515 23 2
-text18 CODE 0 4BF 4BF 6 2
-text19 CODE 0 4B9 4B9 6 2
-text20 CODE 0 4B3 4B3 6 2
-maintext CODE 0 67A 67A 59 2
+text1 CODE 0 6C3 6C3 70 2
+text2 CODE 0 439 439 4 2
+text3 CODE 0 478 478 F 2
+text4 CODE 0 46B 46B D 2
+text5 CODE 0 435 435 4 2
+text6 CODE 0 49B 49B 18 2
+text7 CODE 0 45F 45F C 2
+text8 CODE 0 4B3 4B3 23 2
+text9 CODE 0 44F 44F 6 2
+text10 CODE 0 449 449 6 2
+text11 CODE 0 443 443 6 2
+text12 CODE 0 434 434 1 2
+text13 CODE 0 433 433 1 2
+text14 CODE 0 522 522 27 2
+text15 CODE 0 549 549 2F 2
+text16 CODE 0 4FC 4FC 26 2
+text17 CODE 0 487 487 14 2
+text18 CODE 0 5E8 5E8 3D 2
+text19 CODE 0 4D6 4D6 26 2
+text20 CODE 0 625 625 40 2
+text21 CODE 0 733 733 C2 2
+text22 CODE 0 43D 43D 6 2
+text23 CODE 0 455 455 A 2
+text24 CODE 0 578 578 34 2
+text25 CODE 0 5AC 5AC 3C 2
+maintext CODE 0 665 665 5E 2
 cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK0 BANK0 1 20 20 15 1
+cstackBANK0 BANK0 1 20 20 18 1
 stringtext1 STRCODE 0 800 800 3C 2
 stringtext2 STRCODE 0 83C 83C 21 2
 stringtext3 STRCODE 0 85D 85D 20 2
-stringtext4 STRCODE 0 87D 87D 10 2
-stringtext5 STRCODE 0 88D 88D E 2
-stringtext6 STRCODE 0 89B 89B E 2
-stringtext7 STRCODE 0 8A9 8A9 D 2
-stringtext8 STRCODE 0 8B6 8B6 D 2
-stringtext9 STRCODE 0 8C3 8C3 6 2
-bssBANK0 BANK0 1 35 35 7 1
-stringtext10 STRCODE 0 8C9 8C9 3 2
-$C:\Users\dexte\AppData\Local\Temp\s440.o
+stringtext4 STRCODE 0 87D 87D 1B 2
+stringtext5 STRCODE 0 898 898 10 2
+stringtext6 STRCODE 0 8A8 8A8 E 2
+stringtext7 STRCODE 0 8B6 8B6 E 2
+stringtext8 STRCODE 0 8C4 8C4 D 2
+stringtext9 STRCODE 0 8D1 8D1 6 2
+bssBANK0 BANK0 1 38 38 7 1
+stringtext10 STRCODE 0 8D7 8D7 3 2
+$C:\Users\dexte\AppData\Local\Temp\s91c.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 0 8007 8007 2 2
@@ -57,20 +62,20 @@ config CONFIG 0 8007 8007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 3C-6F 1
+RAM 3F-6F 1
 RAM A0-EF 1
 RAM 120-16F 1
 RAM 1A0-1EF 1
 RAM 220-24F 1
-BANK0 3C-6F 1
+BANK0 3F-6F 1
 BANK1 A0-EF 1
 BANK2 120-16F 1
 BANK3 1A0-1EF 1
 BANK4 220-24F 1
-CONST 4-4AA 2
-CONST 8CC-FFF 2
-ENTRY 4-4AA 2
-ENTRY 8CC-FFF 2
+CONST 4-432 2
+CONST 8DA-FFF 2
+ENTRY 4-432 2
+ENTRY 8DA-FFF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -94,9 +99,9 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 201C-216F 1
-CODE 4-4AA 2
-CODE 8CC-FFF 2
+STACK 201F-216F 1
+CODE 4-432 2
+CODE 8DA-FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -109,10 +114,10 @@ SFR8 400-46F 1
 SFR9 480-4EF 1
 BIGRAM 2000-216F 1
 EEDATA F000-F0FF 2
-STRCODE 4-4AA 2
-STRCODE 8CC-FFF 2
-STRING 4-4AA 2
-STRING 8CC-FFF 2
+STRCODE 4-432 2
+STRCODE 8DA-FFF 2
+STRING 4-432 2
+STRING 8DA-FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -127,224 +132,256 @@ STRING 8CC-FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\ir_recver.X.production.o
-7F5 cinit CODE >2391:C:\Users\dexte\AppData\Local\Temp\s440.s
-7F5 cinit CODE >2394:C:\Users\dexte\AppData\Local\Temp\s440.s
-7F5 cinit CODE >2415:C:\Users\dexte\AppData\Local\Temp\s440.s
-7F6 cinit CODE >2416:C:\Users\dexte\AppData\Local\Temp\s440.s
-7F7 cinit CODE >2417:C:\Users\dexte\AppData\Local\Temp\s440.s
-7F8 cinit CODE >2418:C:\Users\dexte\AppData\Local\Temp\s440.s
-7F9 cinit CODE >2419:C:\Users\dexte\AppData\Local\Temp\s440.s
-7FA cinit CODE >2420:C:\Users\dexte\AppData\Local\Temp\s440.s
-7FB cinit CODE >2421:C:\Users\dexte\AppData\Local\Temp\s440.s
-7FC cinit CODE >2422:C:\Users\dexte\AppData\Local\Temp\s440.s
-7FD cinit CODE >2428:C:\Users\dexte\AppData\Local\Temp\s440.s
-7FD cinit CODE >2430:C:\Users\dexte\AppData\Local\Temp\s440.s
-7FE cinit CODE >2431:C:\Users\dexte\AppData\Local\Temp\s440.s
-4B3 text20 CODE >165:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4B3 text20 CODE >166:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4B8 text20 CODE >167:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4B9 text19 CODE >157:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4B9 text19 CODE >158:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4BE text19 CODE >159:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4BF text18 CODE >161:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4BF text18 CODE >162:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4C4 text18 CODE >163:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-515 text17 CODE >66:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-515 text17 CODE >71:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-518 text17 CODE >74:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-51A text17 CODE >77:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-51C text17 CODE >80:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-51E text17 CODE >83:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-520 text17 CODE >86:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-527 text17 CODE >87:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-52E text17 CODE >88:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-535 text17 CODE >90:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-537 text17 CODE >92:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4D5 text16 CODE >59:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4D5 text16 CODE >62:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4D8 text16 CODE >64:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4D9 text16 CODE >66:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4DB text16 CODE >68:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4DB text16 CODE >70:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4E0 text16 CODE >71:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4FD text15 CODE >55:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-4FD text15 CODE >60:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-4FF text15 CODE >61:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-500 text15 CODE >66:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-503 text15 CODE >67:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-505 text15 CODE >72:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-508 text15 CODE >73:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-50A text15 CODE >78:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-50C text15 CODE >79:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-50D text15 CODE >80:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-50F text15 CODE >86:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-512 text15 CODE >87:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-514 text15 CODE >94:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
-4AB text14 CODE >73:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4AB text14 CODE >76:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4AE text14 CODE >77:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4E1 text13 CODE >50:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4E1 text13 CODE >53:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4E4 text13 CODE >54:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4E7 text13 CODE >55:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4EA text13 CODE >56:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4ED text13 CODE >57:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
-4EE text12 CODE >113:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4EE text12 CODE >115:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4EE text12 CODE >117:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4F3 text12 CODE >119:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4F4 text12 CODE >121:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4F9 text12 CODE >125:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4FA text12 CODE >126:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4FB text12 CODE >129:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4FC text12 CODE >130:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4AF text11 CODE >35:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-4AF text11 CODE >36:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-4B2 text11 CODE >37:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-5C1 text10 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5C1 text10 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5C3 text10 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5C9 text10 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5CB text10 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5CC text10 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5D1 text10 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5D5 text10 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5D9 text10 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5DE text10 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5E8 text10 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5EC text10 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5ED text10 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5F2 text10 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5F8 text10 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-5FC text10 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-58D text9 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-58D text9 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-593 text9 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-595 text9 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-596 text9 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-59B text9 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-59F text9 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-5A3 text9 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-5AD text9 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-5B1 text9 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-5B6 text9 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-5BC text9 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-5C0 text9 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-4CB text8 CODE >132:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4CC text8 CODE >134:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4CC text8 CODE >136:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4D1 text8 CODE >138:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4D4 text8 CODE >139:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-4C5 text7 CODE >31:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-4C6 text7 CODE >32:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-4CA text7 CODE >33:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-733 text6 CODE >477:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-733 text6 CODE >550:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-738 text6 CODE >553:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-739 text6 CODE >555:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-73F text6 CODE >558:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-743 text6 CODE >559:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-744 text6 CODE >565:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-745 text6 CODE >661:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-75C text6 CODE >1285:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-767 text6 CODE >1287:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-76B text6 CODE >1288:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-76F text6 CODE >1289:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-774 text6 CODE >1331:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-776 text6 CODE >1332:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-790 text6 CODE >1331:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-79A text6 CODE >1464:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-7A0 text6 CODE >1465:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-7A4 text6 CODE >1498:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-7A9 text6 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-7AA text6 CODE >1515:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-7D1 text6 CODE >1550:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-7D5 text6 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-7DF text6 CODE >553:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-7F4 text6 CODE >1567:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-6D3 text5 CODE >93:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6D3 text5 CODE >94:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6DB text5 CODE >95:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6E3 text5 CODE >96:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6EB text5 CODE >98:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6F2 text5 CODE >100:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6F8 text5 CODE >101:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6FF text5 CODE >102:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-706 text5 CODE >103:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-70D text5 CODE >104:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-714 text5 CODE >105:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-71B text5 CODE >106:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-722 text5 CODE >107:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-729 text5 CODE >108:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-72A text5 CODE >109:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-72A text5 CODE >111:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-732 text5 CODE >114:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-63A text4 CODE >190:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-63A text4 CODE >191:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-63C text4 CODE >192:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-63D text4 CODE >193:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-641 text4 CODE >194:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-645 text4 CODE >192:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-64A text4 CODE >204:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-64C text4 CODE >205:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-64D text4 CODE >206:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-651 text4 CODE >207:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-655 text4 CODE >209:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-662 text4 CODE >210:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-664 text4 CODE >205:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-664 text4 CODE >212:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-669 text4 CODE >214:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-676 text4 CODE >215:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-678 text4 CODE >217:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-679 text4 CODE >219:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-538 text3 CODE >170:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-539 text3 CODE >172:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-53B text3 CODE >173:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-541 text3 CODE >174:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-546 text3 CODE >175:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-553 text3 CODE >172:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-55D text3 CODE >177:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-55E text2 CODE >159:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-55E text2 CODE >161:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-560 text2 CODE >162:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-567 text2 CODE >163:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-56C text2 CODE >161:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-577 text2 CODE >166:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-584 text2 CODE >167:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-58C text2 CODE >168:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-5FD text1 CODE >121:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-5FD text1 CODE >122:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-5FF text1 CODE >123:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-600 text1 CODE >124:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-604 text1 CODE >125:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-608 text1 CODE >123:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-60D text1 CODE >128:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-61B text1 CODE >132:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-61D text1 CODE >133:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-61E text1 CODE >134:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-622 text1 CODE >135:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-626 text1 CODE >137:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-634 text1 CODE >133:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-634 text1 CODE >140:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-639 text1 CODE >143:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-67A maintext CODE >47:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-67A maintext CODE >49:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-67D maintext CODE >50:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-67F maintext CODE >52:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-682 maintext CODE >54:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-685 maintext CODE >59:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-689 maintext CODE >58:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-68E maintext CODE >62:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-691 maintext CODE >64:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-694 maintext CODE >65:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-698 maintext CODE >66:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-69C maintext CODE >68:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6A9 maintext CODE >70:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6AC maintext CODE >71:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6B0 maintext CODE >72:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6B4 maintext CODE >74:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6BC maintext CODE >75:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-6CB maintext CODE >76:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+7F5 cinit CODE >2418:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7F5 cinit CODE >2421:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7F5 cinit CODE >2442:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7F6 cinit CODE >2443:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7F7 cinit CODE >2444:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7F8 cinit CODE >2445:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7F9 cinit CODE >2446:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7FA cinit CODE >2447:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7FB cinit CODE >2448:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7FC cinit CODE >2449:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7FD cinit CODE >2455:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7FD cinit CODE >2457:C:\Users\dexte\AppData\Local\Temp\s91c.s
+7FE cinit CODE >2458:C:\Users\dexte\AppData\Local\Temp\s91c.s
+5AC text25 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5AC text25 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5AE text25 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5B4 text25 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5B6 text25 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5B7 text25 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5BC text25 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5C0 text25 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5C4 text25 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5C9 text25 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5D3 text25 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5D7 text25 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5D8 text25 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5DD text25 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5E3 text25 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+5E7 text25 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+578 text24 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+578 text24 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+57E text24 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+580 text24 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+581 text24 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+586 text24 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+58A text24 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+58E text24 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+598 text24 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+59C text24 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+5A1 text24 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+5A7 text24 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+5AB text24 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+455 text23 CODE >132:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+456 text23 CODE >134:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+456 text23 CODE >136:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+45B text23 CODE >138:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+45E text23 CODE >139:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+43D text22 CODE >30:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+43E text22 CODE >31:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+442 text22 CODE >32:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+733 text21 CODE >477:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+733 text21 CODE >550:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+738 text21 CODE >553:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+739 text21 CODE >555:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+73F text21 CODE >558:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+743 text21 CODE >559:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+744 text21 CODE >565:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+745 text21 CODE >661:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+75C text21 CODE >1285:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+767 text21 CODE >1287:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+76B text21 CODE >1288:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+76F text21 CODE >1289:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+774 text21 CODE >1331:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+776 text21 CODE >1332:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+790 text21 CODE >1331:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+79A text21 CODE >1464:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+7A0 text21 CODE >1465:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+7A4 text21 CODE >1498:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+7A9 text21 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+7AA text21 CODE >1515:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+7D1 text21 CODE >1550:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+7D5 text21 CODE >1500:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+7DF text21 CODE >553:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+7F4 text21 CODE >1567:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+625 text20 CODE >210:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+625 text20 CODE >211:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+627 text20 CODE >212:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+628 text20 CODE >213:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+62C text20 CODE >214:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+630 text20 CODE >212:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+635 text20 CODE >224:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+637 text20 CODE >225:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+638 text20 CODE >226:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+63C text20 CODE >227:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+640 text20 CODE >229:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+64D text20 CODE >230:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+64F text20 CODE >225:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+64F text20 CODE >232:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+654 text20 CODE >234:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+661 text20 CODE >235:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+663 text20 CODE >237:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+664 text20 CODE >239:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+4D6 text19 CODE >170:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+4D7 text19 CODE >172:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+4D9 text19 CODE >173:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+4DF text19 CODE >174:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+4E4 text19 CODE >175:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+4F1 text19 CODE >172:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+4FB text19 CODE >177:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+5E8 text18 CODE >143:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+5E8 text18 CODE >144:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+5EA text18 CODE >145:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+5EB text18 CODE >146:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+5EF text18 CODE >147:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+5F3 text18 CODE >145:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+5F8 text18 CODE >150:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+606 text18 CODE >154:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+608 text18 CODE >155:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+609 text18 CODE >156:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+60D text18 CODE >157:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+611 text18 CODE >159:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+61F text18 CODE >155:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+61F text18 CODE >162:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+624 text18 CODE >165:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+487 text17 CODE >109:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+487 text17 CODE >110:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+48A text17 CODE >111:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+48E text17 CODE >112:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+492 text17 CODE >113:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+49A text17 CODE >114:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+4FC text16 CODE >190:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+4FD text16 CODE >192:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+4FF text16 CODE >193:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+505 text16 CODE >194:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+50A text16 CODE >195:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+517 text16 CODE >192:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+521 text16 CODE >197:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+549 text15 CODE >179:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+549 text15 CODE >181:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+54B text15 CODE >182:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+552 text15 CODE >183:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+557 text15 CODE >181:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+562 text15 CODE >186:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+56F text15 CODE >187:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+577 text15 CODE >188:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+522 text14 CODE >116:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+522 text14 CODE >117:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+525 text14 CODE >119:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+528 text14 CODE >120:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+52C text14 CODE >121:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+530 text14 CODE >123:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+53D text14 CODE >125:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+540 text14 CODE >126:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+544 text14 CODE >127:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+548 text14 CODE >128:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+433 text13 CODE >134:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+433 text13 CODE >136:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+434 text12 CODE >130:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+434 text12 CODE >132:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+443 text11 CODE >165:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+443 text11 CODE >166:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+448 text11 CODE >167:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+449 text10 CODE >157:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+449 text10 CODE >158:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+44E text10 CODE >159:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+44F text9 CODE >161:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+44F text9 CODE >162:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+454 text9 CODE >163:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4B3 text8 CODE >66:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4B3 text8 CODE >71:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4B6 text8 CODE >74:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4B8 text8 CODE >77:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4BA text8 CODE >80:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4BC text8 CODE >83:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4BE text8 CODE >86:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4C5 text8 CODE >87:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4CC text8 CODE >88:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4D3 text8 CODE >90:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+4D5 text8 CODE >92:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+45F text7 CODE >59:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+45F text7 CODE >62:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+462 text7 CODE >64:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+463 text7 CODE >66:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+465 text7 CODE >68:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+465 text7 CODE >70:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+46A text7 CODE >71:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+49B text6 CODE >55:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+49B text6 CODE >60:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+49D text6 CODE >61:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+49E text6 CODE >66:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+4A1 text6 CODE >67:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+4A3 text6 CODE >72:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+4A6 text6 CODE >73:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+4A8 text6 CODE >78:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+4AA text6 CODE >79:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+4AB text6 CODE >80:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+4AD text6 CODE >86:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+4B0 text6 CODE >87:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+4B2 text6 CODE >94:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/pin_manager.c
+435 text5 CODE >73:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+435 text5 CODE >76:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+438 text5 CODE >77:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+46B text4 CODE >50:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+46B text4 CODE >53:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+46E text4 CODE >54:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+471 text4 CODE >55:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+474 text4 CODE >56:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+477 text4 CODE >57:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/mcc.c
+478 text3 CODE >113:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+478 text3 CODE >115:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+478 text3 CODE >117:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+47D text3 CODE >119:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+47E text3 CODE >121:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+483 text3 CODE >125:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+484 text3 CODE >126:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+485 text3 CODE >129:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+486 text3 CODE >130:D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+439 text2 CODE >34:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+439 text2 CODE >35:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+43C text2 CODE >36:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6C3 text1 CODE >81:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6C3 text1 CODE >82:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6CB text1 CODE >83:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6D3 text1 CODE >84:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6DB text1 CODE >86:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6E2 text1 CODE >88:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6E8 text1 CODE >89:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6EF text1 CODE >90:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6F2 text1 CODE >91:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6F8 text1 CODE >92:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6FF text1 CODE >93:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+702 text1 CODE >94:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+708 text1 CODE >95:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+70F text1 CODE >96:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+712 text1 CODE >97:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+718 text1 CODE >98:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+71F text1 CODE >99:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+722 text1 CODE >101:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+726 text1 CODE >102:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+728 text1 CODE >104:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+730 text1 CODE >106:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+732 text1 CODE >107:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+665 maintext CODE >52:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+665 maintext CODE >54:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+668 maintext CODE >55:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+66A maintext CODE >56:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+671 maintext CODE >58:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+673 maintext CODE >62:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+677 maintext CODE >61:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+67C maintext CODE >65:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+682 maintext CODE >66:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+685 maintext CODE >67:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+68C maintext CODE >68:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+68F maintext CODE >69:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+696 maintext CODE >70:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+699 maintext CODE >71:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6A0 maintext CODE >72:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6A4 maintext CODE >75:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6AC maintext CODE >76:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+6BB maintext CODE >77:D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -358,7 +395,7 @@ $dist/default/production\ir_recver.X.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 1 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-_EUSART_Read 9DC 0 CODE 0 text12 dist/default/production\ir_recver.X.production.o
+_EUSART_Read 8F0 0 CODE 0 text3 dist/default/production\ir_recver.X.production.o
 putch@data 71 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 ___lwmod@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 __Hspace_0 8009 0 ABS 0 - -
@@ -369,41 +406,45 @@ recv_daikin_reader@a 30 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.
 recv_daikin_reader@i 31 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-_detect_mode DA6 0 CODE 0 text5 dist/default/production\ir_recver.X.production.o
-__end_of_WDT_Initialize 95E 0 CODE 0 text14 dist/default/production\ir_recver.X.production.o
+_detect_mode D86 0 CODE 0 text1 dist/default/production\ir_recver.X.production.o
+__end_of_WDT_Initialize 872 0 CODE 0 text5 dist/default/production\ir_recver.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 recv_daikin_frame@a 76 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 recv_daikin_frame@i 75 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
+_AEHA 90E 0 CODE 0 text17 dist/default/production\ir_recver.X.production.o
 _LATA 10C 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _LATB 10D 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _PLLR 4D6 0 ABS 0 - dist/default/production\ir_recver.X.production.o
+_SONY 868 0 CODE 0 text12 dist/default/production\ir_recver.X.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\dexte\AppData\Local\Temp\s440.o
-_main CF4 0 CODE 0 maintext dist/default/production\ir_recver.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\dexte\AppData\Local\Temp\s91c.o
+_main CCA 0 CODE 0 maintext dist/default/production\ir_recver.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-start 4 0 CODE 0 init C:\Users\dexte\AppData\Local\Temp\s440.o
-_EUSART_Write 996 0 CODE 0 text8 dist/default/production\ir_recver.X.production.o
+start 4 0 CODE 0 init C:\Users\dexte\AppData\Local\Temp\s91c.o
+_EUSART_Write 8AA 0 CODE 0 text23 dist/default/production\ir_recver.X.production.o
+__size_of_AEHA 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
+__size_of_SONY 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __size_of___lwmod 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __Hstringtext10 0 0 ABS 0 stringtext10 -
 __Hstringtext11 0 0 ABS 0 stringtext11 -
-_recv_reader BFA 0 CODE 0 text1 dist/default/production\ir_recver.X.production.o
-__end_of_EUSART_SetFramingErrorHandler 97E 0 CODE 0 text19 dist/default/production\ir_recver.X.production.o
-__end_of_EUSART_SetOverrunErrorHandler 98A 0 CODE 0 text18 dist/default/production\ir_recver.X.production.o
+_recv_reader BD0 0 CODE 0 text18 dist/default/production\ir_recver.X.production.o
+__end_of_EUSART_SetFramingErrorHandler 89E 0 CODE 0 text10 dist/default/production\ir_recver.X.production.o
+__end_of_EUSART_SetOverrunErrorHandler 8AA 0 CODE 0 text9 dist/default/production\ir_recver.X.production.o
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-__end_of_EUSART_Initialize A70 0 CODE 0 text17 dist/default/production\ir_recver.X.production.o
+__end_of_EUSART_Initialize 9AC 0 CODE 0 text8 dist/default/production\ir_recver.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 printf@c 2D 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
 printf@f 20 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s440.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s440.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s440.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s440.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s440.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s440.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s91c.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s91c.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s91c.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s91c.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s91c.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\s91c.o
 recv_reader@width 71 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __size_of_bit_find 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
@@ -417,41 +458,45 @@ printf@prec 2A 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.product
 _ANSELA 18C 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _ANSELB 18D 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _BORCON 116 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-__end_of_EUSART_Write 9AA 0 CODE 0 text8 dist/default/production\ir_recver.X.production.o
-main@cnt 34 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
+_DAIKIN A44 0 CODE 0 text14 dist/default/production\ir_recver.X.production.o
+__end_of_EUSART_Write 8BE 0 CODE 0 text23 dist/default/production\ir_recver.X.production.o
+main@cnt 36 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 ?_printf 20 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
 ___lwmod@divisor 78 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
-__end_of___lwdiv BFA 0 CODE 0 text10 dist/default/production\ir_recver.X.production.o
-__end_of___lwmod B82 0 CODE 0 text9 dist/default/production\ir_recver.X.production.o
-_bit_find C74 0 CODE 0 text4 dist/default/production\ir_recver.X.production.o
-___stackhi 216F 0 ABS 0 - C:\Users\dexte\AppData\Local\Temp\s440.o
-___stacklo 201C 0 ABS 0 - C:\Users\dexte\AppData\Local\Temp\s440.o
+__end_of___lwdiv BD0 0 CODE 0 text25 dist/default/production\ir_recver.X.production.o
+__end_of___lwmod B58 0 CODE 0 text24 dist/default/production\ir_recver.X.production.o
+_bit_find C4A 0 CODE 0 text20 dist/default/production\ir_recver.X.production.o
+___stackhi 216F 0 ABS 0 - C:\Users\dexte\AppData\Local\Temp\s91c.o
+___stacklo 201F 0 ABS 0 - C:\Users\dexte\AppData\Local\Temp\s91c.o
 _dpowers 1000 0 STRCODE 0 stringtext1 dist/default/production\ir_recver.X.production.o
-_EUSART_Initialize A2A 0 CODE 0 text17 dist/default/production\ir_recver.X.production.o
+_EUSART_Initialize 966 0 CODE 0 text8 dist/default/production\ir_recver.X.production.o
 ___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 __size_of_getch 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __size_of_putch 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __size_of_recv_daikin_frame 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-__end_of_bit_find CF4 0 CODE 0 text4 dist/default/production\ir_recver.X.production.o
+__end_of_bit_find CCA 0 CODE 0 text20 dist/default/production\ir_recver.X.production.o
 ___lwmod@dividend 7A 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
-_PIN_MANAGER_Initialize 9FA 0 CODE 0 text15 dist/default/production\ir_recver.X.production.o
+_PIN_MANAGER_Initialize 936 0 CODE 0 text6 dist/default/production\ir_recver.X.production.o
 __Lstringtext10 0 0 ABS 0 stringtext10 -
 __Lstringtext11 0 0 ABS 0 stringtext11 -
 start_initialization FEA 0 CODE 0 cinit dist/default/production\ir_recver.X.production.o
-_EUSART_SetErrorHandler 966 0 CODE 0 text20 dist/default/production\ir_recver.X.production.o
+_EUSART_SetErrorHandler 886 0 CODE 0 text11 dist/default/production\ir_recver.X.production.o
+__size_of_DAIKIN 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _OSCCON 99 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 EUSART_SetOverrunErrorHandler@interruptHandler 70 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 __size_of_EUSART_SetFramingErrorHandler 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __size_of_EUSART_SetOverrunErrorHandler 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-__end_of_SYSTEM_Initialize 9DC 0 CODE 0 text13 dist/default/production\ir_recver.X.production.o
+__end_of_SYSTEM_Initialize 8F0 0 CODE 0 text4 dist/default/production\ir_recver.X.production.o
+recv_data@a 76 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
+recv_data@i 75 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 _SPBRGH 19C 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _SPBRGL 19B 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
-__end_of_printf FEA 0 CODE 0 text6 dist/default/production\ir_recver.X.production.o
+__end_of_printf FEA 0 CODE 0 text21 dist/default/production\ir_recver.X.production.o
 _WDTCON 97 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\dexte\AppData\Local\Temp\s440.o
-__end_of_EUSART_Read 9FA 0 CODE 0 text12 dist/default/production\ir_recver.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\dexte\AppData\Local\Temp\s91c.o
+__end_of_EUSART_Read 90E 0 CODE 0 text3 dist/default/production\ir_recver.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -528,7 +573,7 @@ __Lbank8 0 0 BANK8 1 bank8 -
 __Lbank9 0 0 BANK9 1 bank9 -
 __Lcinit FEA 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
-__end_of_detect_mode E66 0 CODE 0 text5 dist/default/production\ir_recver.X.production.o
+__end_of_detect_mode E66 0 CODE 0 text1 dist/default/production\ir_recver.X.production.o
 EUSART_SetErrorHandler@interruptHandler 70 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
@@ -555,6 +600,7 @@ __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
 _APFCON0 11D 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _APFCON1 11E 0 ABS 0 - dist/default/production\ir_recver.X.production.o
+recv_data@size 74 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 _PORTAbits C 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
@@ -588,29 +634,31 @@ __pstringtext1 1000 0 STRCODE 0 stringtext1 dist/default/production\ir_recver.X.
 __pstringtext2 1078 0 STRCODE 0 stringtext2 dist/default/production\ir_recver.X.production.o
 __pstringtext3 10BA 0 STRCODE 0 stringtext3 dist/default/production\ir_recver.X.production.o
 __pstringtext4 10FA 0 STRCODE 0 stringtext4 dist/default/production\ir_recver.X.production.o
-__pstringtext5 111A 0 STRCODE 0 stringtext5 dist/default/production\ir_recver.X.production.o
-__pstringtext6 1136 0 STRCODE 0 stringtext6 dist/default/production\ir_recver.X.production.o
-__pstringtext7 1152 0 STRCODE 0 stringtext7 dist/default/production\ir_recver.X.production.o
-__pstringtext8 116C 0 STRCODE 0 stringtext8 dist/default/production\ir_recver.X.production.o
-__pstringtext9 1186 0 STRCODE 0 stringtext9 dist/default/production\ir_recver.X.production.o
-__end_of_recv_reader C74 0 CODE 0 text1 dist/default/production\ir_recver.X.production.o
-__pstringtext10 1192 0 STRCODE 0 stringtext10 dist/default/production\ir_recver.X.production.o
+__pstringtext5 1130 0 STRCODE 0 stringtext5 dist/default/production\ir_recver.X.production.o
+__pstringtext6 1150 0 STRCODE 0 stringtext6 dist/default/production\ir_recver.X.production.o
+__pstringtext7 116C 0 STRCODE 0 stringtext7 dist/default/production\ir_recver.X.production.o
+__pstringtext8 1188 0 STRCODE 0 stringtext8 dist/default/production\ir_recver.X.production.o
+__pstringtext9 11A2 0 STRCODE 0 stringtext9 dist/default/production\ir_recver.X.production.o
+__end_of_recv_reader C4A 0 CODE 0 text18 dist/default/production\ir_recver.X.production.o
+__pstringtext10 11AE 0 STRCODE 0 stringtext10 dist/default/production\ir_recver.X.production.o
 __pstringtext11 0 0 STRCODE 0 stringtext11 dist/default/production\ir_recver.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __size_of_WDT_Initialize 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
+_NEC 866 0 CODE 0 text13 dist/default/production\ir_recver.X.production.o
 __S0 8009 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __CFG_PLLEN$ON 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-__end_of_recv_daikin_frame ABC 0 CODE 0 text3 dist/default/production\ir_recver.X.production.o
-_SYSTEM_Initialize 9C2 0 CODE 0 text13 dist/default/production\ir_recver.X.production.o
-__end_of_recv_daikin_reader B1A 0 CODE 0 text2 dist/default/production\ir_recver.X.production.o
+__end_of_recv_daikin_frame A44 0 CODE 0 text16 dist/default/production\ir_recver.X.production.o
+_SYSTEM_Initialize 8D6 0 CODE 0 text4 dist/default/production\ir_recver.X.production.o
+__end_of_NEC 868 0 CODE 0 text13 dist/default/production\ir_recver.X.production.o
+__end_of_recv_daikin_reader AF0 0 CODE 0 text15 dist/default/production\ir_recver.X.production.o
 bit_find@width 71 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\dexte\AppData\Local\Temp\s440.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\dexte\AppData\Local\Temp\s91c.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __Lstringtext1 0 0 ABS 0 stringtext1 -
@@ -624,21 +672,28 @@ __Lstringtext8 0 0 ABS 0 stringtext8 -
 __Lstringtext9 0 0 ABS 0 stringtext9 -
 _RCSTAbits 19D 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 EUSART_SetFramingErrorHandler@interruptHandler 70 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
-__ptext10 B82 0 CODE 0 text10 dist/default/production\ir_recver.X.production.o
-__ptext11 95E 0 CODE 0 text11 dist/default/production\ir_recver.X.production.o
-__ptext12 9DC 0 CODE 0 text12 dist/default/production\ir_recver.X.production.o
-__ptext13 9C2 0 CODE 0 text13 dist/default/production\ir_recver.X.production.o
-__ptext14 956 0 CODE 0 text14 dist/default/production\ir_recver.X.production.o
-__ptext15 9FA 0 CODE 0 text15 dist/default/production\ir_recver.X.production.o
-__ptext16 9AA 0 CODE 0 text16 dist/default/production\ir_recver.X.production.o
-__ptext17 A2A 0 CODE 0 text17 dist/default/production\ir_recver.X.production.o
-__ptext18 97E 0 CODE 0 text18 dist/default/production\ir_recver.X.production.o
-__ptext19 972 0 CODE 0 text19 dist/default/production\ir_recver.X.production.o
-__ptext20 966 0 CODE 0 text20 dist/default/production\ir_recver.X.production.o
-__end_of_PIN_MANAGER_Initialize A2A 0 CODE 0 text15 dist/default/production\ir_recver.X.production.o
+__end_of_recv_data 9F8 0 CODE 0 text19 dist/default/production\ir_recver.X.production.o
+__ptext10 892 0 CODE 0 text10 dist/default/production\ir_recver.X.production.o
+__ptext11 886 0 CODE 0 text11 dist/default/production\ir_recver.X.production.o
+__ptext12 868 0 CODE 0 text12 dist/default/production\ir_recver.X.production.o
+__ptext13 866 0 CODE 0 text13 dist/default/production\ir_recver.X.production.o
+__ptext14 A44 0 CODE 0 text14 dist/default/production\ir_recver.X.production.o
+__ptext15 A92 0 CODE 0 text15 dist/default/production\ir_recver.X.production.o
+__ptext16 9F8 0 CODE 0 text16 dist/default/production\ir_recver.X.production.o
+__ptext17 90E 0 CODE 0 text17 dist/default/production\ir_recver.X.production.o
+__ptext18 BD0 0 CODE 0 text18 dist/default/production\ir_recver.X.production.o
+__ptext19 9AC 0 CODE 0 text19 dist/default/production\ir_recver.X.production.o
+__ptext20 C4A 0 CODE 0 text20 dist/default/production\ir_recver.X.production.o
+__ptext21 E66 0 CODE 0 text21 dist/default/production\ir_recver.X.production.o
+__ptext22 87A 0 CODE 0 text22 dist/default/production\ir_recver.X.production.o
+__ptext23 8AA 0 CODE 0 text23 dist/default/production\ir_recver.X.production.o
+__ptext24 AF0 0 CODE 0 text24 dist/default/production\ir_recver.X.production.o
+__ptext25 B58 0 CODE 0 text25 dist/default/production\ir_recver.X.production.o
+__end_of_PIN_MANAGER_Initialize 966 0 CODE 0 text6 dist/default/production\ir_recver.X.production.o
+__size_of_recv_data 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _BAUDCON 19F 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-___lwdiv B82 0 CODE 0 text10 dist/default/production\ir_recver.X.production.o
-___lwmod B1A 0 CODE 0 text9 dist/default/production\ir_recver.X.production.o
+___lwdiv B58 0 CODE 0 text25 dist/default/production\ir_recver.X.production.o
+___lwmod AF0 0 CODE 0 text24 dist/default/production\ir_recver.X.production.o
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -661,40 +716,43 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext CF4 0 CODE 0 maintext dist/default/production\ir_recver.X.production.o
+__pmaintext CCA 0 CODE 0 maintext dist/default/production\ir_recver.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-__end_of_EUSART_SetErrorHandler 972 0 CODE 0 text20 dist/default/production\ir_recver.X.production.o
-_recv_daikin_reader ABC 0 CODE 0 text2 dist/default/production\ir_recver.X.production.o
+__end_of_EUSART_SetErrorHandler 892 0 CODE 0 text11 dist/default/production\ir_recver.X.production.o
+_recv_daikin_reader A92 0 CODE 0 text15 dist/default/production\ir_recver.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
-_printf E66 0 CODE 0 text6 dist/default/production\ir_recver.X.production.o
+_printf E66 0 CODE 0 text21 dist/default/production\ir_recver.X.production.o
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _LATAbits 10C 0 ABS 0 - dist/default/production\ir_recver.X.production.o
+_LATBbits 10D 0 ABS 0 - dist/default/production\ir_recver.X.production.o
+main@mode 37 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
 ___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
+_recv_data 9AC 0 CODE 0 text19 dist/default/production\ir_recver.X.production.o
 __size_of_EUSART_Read 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-_EUSART_FramingErrorHandler 39 0 BANK0 1 bssBANK0 dist/default/production\ir_recver.X.production.o
-_EUSART_OverrunErrorHandler 37 0 BANK0 1 bssBANK0 dist/default/production\ir_recver.X.production.o
+_EUSART_FramingErrorHandler 3C 0 BANK0 1 bssBANK0 dist/default/production\ir_recver.X.production.o
+_EUSART_OverrunErrorHandler 3A 0 BANK0 1 bssBANK0 dist/default/production\ir_recver.X.production.o
 _OSCTUNE 98 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 recv_daikin_frame@size 74 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-_EUSART_ErrorHandler 35 0 BANK0 1 bssBANK0 dist/default/production\ir_recver.X.production.o
+_EUSART_ErrorHandler 38 0 BANK0 1 bssBANK0 dist/default/production\ir_recver.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-_recv_daikin_frame A70 0 CODE 0 text3 dist/default/production\ir_recver.X.production.o
+_recv_daikin_frame 9F8 0 CODE 0 text16 dist/default/production\ir_recver.X.production.o
 _PIR1bits 11 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __Lend_init 4 0 CODE 0 end_init -
 __size_of_detect_mode 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _EUSART_DefaultErrorHandler 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 printf@ap 28 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
-_EUSART_SetFramingErrorHandler 972 0 CODE 0 text19 dist/default/production\ir_recver.X.production.o
-_EUSART_SetOverrunErrorHandler 97E 0 CODE 0 text18 dist/default/production\ir_recver.X.production.o
+_EUSART_SetFramingErrorHandler 892 0 CODE 0 text10 dist/default/production\ir_recver.X.production.o
+_EUSART_SetOverrunErrorHandler 89E 0 CODE 0 text9 dist/default/production\ir_recver.X.production.o
 end_of_initialization FFA 0 CODE 0 cinit dist/default/production\ir_recver.X.production.o
 __Hintentry 4 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
@@ -706,15 +764,15 @@ ___lwdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X
 ?___lwmod 78 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 BFA 0 CODE 0 text1 dist/default/production\ir_recver.X.production.o
-__ptext2 ABC 0 CODE 0 text2 dist/default/production\ir_recver.X.production.o
-__ptext3 A70 0 CODE 0 text3 dist/default/production\ir_recver.X.production.o
-__ptext4 C74 0 CODE 0 text4 dist/default/production\ir_recver.X.production.o
-__ptext5 DA6 0 CODE 0 text5 dist/default/production\ir_recver.X.production.o
-__ptext6 E66 0 CODE 0 text6 dist/default/production\ir_recver.X.production.o
-__ptext7 98A 0 CODE 0 text7 dist/default/production\ir_recver.X.production.o
-__ptext8 996 0 CODE 0 text8 dist/default/production\ir_recver.X.production.o
-__ptext9 B1A 0 CODE 0 text9 dist/default/production\ir_recver.X.production.o
+__ptext1 D86 0 CODE 0 text1 dist/default/production\ir_recver.X.production.o
+__ptext2 872 0 CODE 0 text2 dist/default/production\ir_recver.X.production.o
+__ptext3 8F0 0 CODE 0 text3 dist/default/production\ir_recver.X.production.o
+__ptext4 8D6 0 CODE 0 text4 dist/default/production\ir_recver.X.production.o
+__ptext5 86A 0 CODE 0 text5 dist/default/production\ir_recver.X.production.o
+__ptext6 936 0 CODE 0 text6 dist/default/production\ir_recver.X.production.o
+__ptext7 8BE 0 CODE 0 text7 dist/default/production\ir_recver.X.production.o
+__ptext8 966 0 CODE 0 text8 dist/default/production\ir_recver.X.production.o
+__ptext9 89E 0 CODE 0 text9 dist/default/production\ir_recver.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -736,34 +794,38 @@ __size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production\ir_recver.X.prod
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\ir_recver.X.production.o
 _TXSTAbits 19E 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __Hend_init 8 0 CODE 0 end_init -
-__end_of_main DA6 0 CODE 0 maintext dist/default/production\ir_recver.X.production.o
+__end_of_AEHA 936 0 CODE 0 text17 dist/default/production\ir_recver.X.production.o
+__end_of_SONY 86A 0 CODE 0 text12 dist/default/production\ir_recver.X.production.o
+__end_of_main D86 0 CODE 0 maintext dist/default/production\ir_recver.X.production.o
 printf@val 2B 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
 __end_of_dpowers 1014 0 STRCODE 0 stringtext1 dist/default/production\ir_recver.X.production.o
-__end_of_getch 966 0 CODE 0 text11 dist/default/production\ir_recver.X.production.o
+__end_of_getch 87A 0 CODE 0 text2 dist/default/production\ir_recver.X.production.o
 _RCREG 199 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _RCSTA 19D 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _TRISA 8C 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _TRISB 8D 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _TXREG 19A 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 _TXSTA 19E 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-__end_of_putch 996 0 CODE 0 text7 dist/default/production\ir_recver.X.production.o
+__end_of_putch 886 0 CODE 0 text22 dist/default/production\ir_recver.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_getch 95E 0 CODE 0 text11 dist/default/production\ir_recver.X.production.o
-_putch 98A 0 CODE 0 text7 dist/default/production\ir_recver.X.production.o
+_getch 872 0 CODE 0 text2 dist/default/production\ir_recver.X.production.o
+_putch 87A 0 CODE 0 text22 dist/default/production\ir_recver.X.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-_eusartRxLastError 3B 0 BANK0 1 bssBANK0 dist/default/production\ir_recver.X.production.o
-_WDT_Initialize 956 0 CODE 0 text14 dist/default/production\ir_recver.X.production.o
+_eusartRxLastError 3E 0 BANK0 1 bssBANK0 dist/default/production\ir_recver.X.production.o
+_WDT_Initialize 86A 0 CODE 0 text5 dist/default/production\ir_recver.X.production.o
+__size_of_NEC 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 __size_of_EUSART_SetErrorHandler 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-__end_of_OSCILLATOR_Initialize 9C2 0 CODE 0 text16 dist/default/production\ir_recver.X.production.o
+__end_of_OSCILLATOR_Initialize 8D6 0 CODE 0 text7 dist/default/production\ir_recver.X.production.o
 __initialization FEA 0 CODE 0 cinit dist/default/production\ir_recver.X.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
-__pbssBANK0 35 0 BANK0 1 bssBANK0 dist/default/production\ir_recver.X.production.o
+__pbssBANK0 38 0 BANK0 1 bssBANK0 dist/default/production\ir_recver.X.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
+__end_of_DAIKIN A92 0 CODE 0 text14 dist/default/production\ir_recver.X.production.o
 __size_of_recv_daikin_reader 0 0 ABS 0 - dist/default/production\ir_recver.X.production.o
 detect_mode@mode 2F 0 BANK0 1 cstackBANK0 dist/default/production\ir_recver.X.production.o
-_OSCILLATOR_Initialize 9AA 0 CODE 0 text16 dist/default/production\ir_recver.X.production.o
+_OSCILLATOR_Initialize 8BE 0 CODE 0 text7 dist/default/production\ir_recver.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -790,30 +852,35 @@ _OSCILLATOR_Initialize 9AA 0 CODE 0 text16 dist/default/production\ir_recver.X.p
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7F5 FEA B 2
-text1 0 5FD BFA 3D 2
-text2 0 55E ABC 2F 2
-text3 0 538 A70 26 2
-text4 0 63A C74 40 2
-text5 0 6D3 DA6 60 2
-text6 0 733 E66 C2 2
-text7 0 4C5 98A 6 2
-text8 0 4CB 996 A 2
-text9 0 58D B1A 34 2
-text10 0 5C1 B82 3C 2
-text11 0 4AF 95E 4 2
-text12 0 4EE 9DC F 2
-text13 0 4E1 9C2 D 2
-text14 0 4AB 956 4 2
-text15 0 4FD 9FA 18 2
-text16 0 4D5 9AA C 2
-text17 0 515 A2A 23 2
-text18 0 4BF 97E 6 2
-text19 0 4B9 972 6 2
-text20 0 4B3 966 6 2
-maintext 0 67A CF4 59 2
+text1 0 6C3 D86 70 2
+text2 0 439 872 4 2
+text3 0 478 8F0 F 2
+text4 0 46B 8D6 D 2
+text5 0 435 86A 4 2
+text6 0 49B 936 18 2
+text7 0 45F 8BE C 2
+text8 0 4B3 966 23 2
+text9 0 44F 89E 6 2
+text10 0 449 892 6 2
+text11 0 443 886 6 2
+text12 0 434 868 1 2
+text13 0 433 866 1 2
+text14 0 522 A44 27 2
+text15 0 549 A92 2F 2
+text16 0 4FC 9F8 26 2
+text17 0 487 90E 14 2
+text18 0 5E8 BD0 3D 2
+text19 0 4D6 9AC 26 2
+text20 0 625 C4A 40 2
+text21 0 733 E66 C2 2
+text22 0 43D 87A 6 2
+text23 0 455 8AA A 2
+text24 0 578 AF0 34 2
+text25 0 5AC B58 3C 2
+maintext 0 665 CCA 5E 2
 cstackCOMMON 1 70 70 E 1
-cstackBANK0 1 20 20 1C 1
-stringtext1 0 800 1000 CC 2
+cstackBANK0 1 20 20 1F 1
+stringtext1 0 800 1000 DA 2
 reset_vec 0 0 0 4 2
 config 0 8007 1000E 2 2
 # OTES Section

@@ -18,7 +18,6 @@ ON(1T) -> OFF(>=8ms)
 */
 
 #include "mcc_generated_files/mcc.h"
-#include "sender.h"
 #include <stdio.h>
 
 #define MAX_SIZE 48
@@ -36,7 +35,7 @@ uint8_t getch(){
     return EUSART_Read();
 }
 
-void recv_data(uint8_t *data, uint8_t size);
+void recv_data(uint8_t size);
 uint8_t recv_reader();
 uint8_t bit_find();
 uint8_t byte_recv();
@@ -44,49 +43,38 @@ void recv_daikin_reader();
 void recv_daikin_frame(uint8_t size);
 uint8_t detect_mode();
 
+void DAIKIN();
+void AEHA();
+void SONY();
+void NEC();
+
+
 void main(void)
 {    
     SYSTEM_Initialize();    
     LED_1_SetHigh();
-    
-    detect_mode();
+    uint8_t mode = detect_mode();
     
     uint8_t cnt = 0;
         
-	while(1){              
-        
+	while(1){                      
         while(IR_GetValue() == 1){
             __delay_us(5);
         }
         
-        recv_daikin_reader();
-               
-        recv_reader();
-        recv_daikin_frame(160);        
-        putch('|');        
-        
-        __delay_ms(35);
-        
-        recv_reader();
-        recv_daikin_frame(152);        
-        putch('|');
+        if(mode == 'D'){
+            DAIKIN();
+        }else if(mode == 'A'){
+            AEHA();
+        }else if(mode == 'S'){
+            SONY();
+        }else if(mode == 'N'){
+            NEC();
+        }
         
         printf("end\r\n");
         printf("[%d]--------------------------\r\n", cnt);
-        cnt++;
-        
-        /*
-		uint8_t data[MAX_SIZE];
-		
-		while(IR_GetValue() == 1){
-			__delay_us(5);
-		}
-
-		recv_reader();
-		recv_data(data, MAX_SIZE);
-		putch('|');
-        printf("\r\n");         
-         * */
+        cnt++;        
 	}
 }
 
@@ -99,18 +87,52 @@ uint8_t detect_mode(){
     
     if(mode == 'N'){
         printf("Detect NEC\r\n");
+        LED_N_SetHigh();
     }else if(mode == 'A'){
         printf("Detect AEHA\r\n");
+        LED_A_SetHigh();
     }else if(mode == 'D'){
         printf("Detect DAIKIN\r\n");
+        LED_D_SetHigh();
     }else if(mode == 'S'){
         printf("Detect SONY\r\n");
+        LED_S_SetHigh();
     }else{
         mode = 'D';
+        LED_D_SetHigh();
     }
     printf(SEP);
     
     return mode;
+}
+
+void AEHA(){		
+	recv_reader();
+	recv_data(MAX_SIZE);
+	putch('|');
+    printf("\r\n");  
+}
+
+void DAIKIN(){
+    recv_daikin_reader();
+               
+    recv_reader();
+    recv_daikin_frame(160);        
+    putch('|');        
+        
+    __delay_ms(35);
+        
+    recv_reader();
+    recv_daikin_frame(152);        
+    putch('|');
+}
+
+void SONY(){
+    
+}
+
+void NEC(){
+    
 }
 
 /**
@@ -145,14 +167,12 @@ uint8_t recv_reader(){
 /**
 data 48bit (variable)
 */
-void recv_data(uint8_t *data, uint8_t size){
+void recv_data(uint8_t size){
 	uint8_t i;    
 	for(i = 0; i < size; i++){
-		uint8_t a = bit_find();                
-		if(a == 3 || a == 2) break;
-
-		data[i] = a;
+		uint8_t a = bit_find();                				
 		putch(a + '0');
+        if(a == 3 || a == 2) break;
 	}
 }
 
@@ -216,20 +236,4 @@ uint8_t bit_find(){
 	}else{
 		return 1;
 	}
-}
-
-uint8_t byte_recv(){
-    uint8_t mask, i, data;
-    data = 0;
-    mask = 0x80;
-    for(i = 0; i < 8; i++){
-        uint8_t a = bit_find();
-        if(a == 3) break;
-        if(a == 1){
-            data |= mask;
-        }
-        mask >>= 1;
-    }
-    
-    return data;
 }

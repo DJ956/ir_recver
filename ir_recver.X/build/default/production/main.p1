@@ -14,7 +14,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S104 . . ]
 "2056
 [v _LATAbits `VS104 ~T0 @X0 0 e@268 ]
-"45 main.c
+"44 main.c
 [v _detect_mode `(uc ~T0 @X0 0 ef ]
 [v F2287 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
@@ -28,15 +28,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S28 . . ]
 "446
 [v _PORTAbits `VS28 ~T0 @X0 0 e@12 ]
-"43 main.c
-[v _recv_daikin_reader `(v ~T0 @X0 0 ef ]
-"40
-[v _recv_reader `(uc ~T0 @X0 0 ef ]
-"44
-[v _recv_daikin_frame `(v ~T0 @X0 0 ef1`uc ]
+"46 main.c
+[v _DAIKIN `(v ~T0 @X0 0 ef ]
+"47
+[v _AEHA `(v ~T0 @X0 0 ef ]
+"48
+[v _SONY `(v ~T0 @X0 0 ef ]
+"49
+[v _NEC `(v ~T0 @X0 0 ef ]
 "195 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"41 main.c
+"2102 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f1827.h
+[s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S107 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"2101
+[u S106 `S107 1 ]
+[n S106 . . ]
+"2113
+[v _LATBbits `VS106 ~T0 @X0 0 e@269 ]
+"39 main.c
+[v _recv_reader `(uc ~T0 @X0 0 ef ]
+"38
+[v _recv_data `(v ~T0 @X0 0 ef1`uc ]
+"42
+[v _recv_daikin_reader `(v ~T0 @X0 0 ef ]
+"43
+[v _recv_daikin_frame `(v ~T0 @X0 0 ef1`uc ]
+"40
 [v _bit_find `(uc ~T0 @X0 0 ef ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
@@ -2792,8 +2810,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 137: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 138: extern __bank0 __bit __powerdown;
 [; ;pic.h: 139: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 144: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 156: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 197: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 209: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef __int24 int24_t;
@@ -2855,12 +2873,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 70: void SYSTEM_Initialize(void);
 [; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 95: void WDT_Initialize(void);
-[; ;sender.h: 15: void pwm_out();
-[; ;sender.h: 16: void high_bit();
-[; ;sender.h: 17: void low_bit();
-[; ;sender.h: 18: void send_reader();
-[; ;sender.h: 19: void send_data(uint8_t *data, uint8_t size);
-[; ;sender.h: 20: void send_data_ch(char *data, uint8_t size);
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
@@ -2882,389 +2894,435 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 195: extern int printf(const char *, ...);
-"31 main.c
+"30 main.c
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 31: void putch(char data){
+[; ;main.c: 30: void putch(char data){
 [e :U _putch ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 32: EUSART_Write(data);
-"32
+[; ;main.c: 31: EUSART_Write(data);
+"31
 [e ( _EUSART_Write (1 _data ]
-[; ;main.c: 33: }
-"33
+[; ;main.c: 32: }
+"32
 [e :UE 352 ]
 }
-"35
+"34
 [v _getch `(uc ~T0 @X0 1 ef ]
 {
-[; ;main.c: 35: uint8_t getch(){
+[; ;main.c: 34: uint8_t getch(){
 [e :U _getch ]
 [f ]
-[; ;main.c: 36: return EUSART_Read();
-"36
+[; ;main.c: 35: return EUSART_Read();
+"35
 [e ) ( _EUSART_Read ..  ]
 [e $UE 353  ]
-[; ;main.c: 37: }
-"37
+[; ;main.c: 36: }
+"36
 [e :UE 353 ]
 }
-[; ;main.c: 39: void recv_data(uint8_t *data, uint8_t size);
-[; ;main.c: 40: uint8_t recv_reader();
-[; ;main.c: 41: uint8_t bit_find();
-[; ;main.c: 42: uint8_t byte_recv();
-[; ;main.c: 43: void recv_daikin_reader();
-[; ;main.c: 44: void recv_daikin_frame(uint8_t size);
-[; ;main.c: 45: uint8_t detect_mode();
+[; ;main.c: 38: void recv_data(uint8_t size);
+[; ;main.c: 39: uint8_t recv_reader();
+[; ;main.c: 40: uint8_t bit_find();
+[; ;main.c: 41: uint8_t byte_recv();
+[; ;main.c: 42: void recv_daikin_reader();
+[; ;main.c: 43: void recv_daikin_frame(uint8_t size);
+[; ;main.c: 44: uint8_t detect_mode();
+[; ;main.c: 46: void DAIKIN();
+[; ;main.c: 47: void AEHA();
+[; ;main.c: 48: void SONY();
+[; ;main.c: 49: void NEC();
 [v $root$_main `(v ~T0 @X0 0 e ]
-"47
+"52
 [v _main `(v ~T0 @X0 1 ef ]
-"48
+"53
 {
-[; ;main.c: 47: void main(void)
-[; ;main.c: 48: {
+[; ;main.c: 52: void main(void)
+[; ;main.c: 53: {
 [e :U _main ]
 [f ]
-[; ;main.c: 49: SYSTEM_Initialize();
-"49
+[; ;main.c: 54: SYSTEM_Initialize();
+"54
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 50: do { LATAbits.LATA2 = 1; } while(0);
-"50
+[; ;main.c: 55: do { LATAbits.LATA2 = 1; } while(0);
+"55
 [e :U 357 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 356 ]
-[; ;main.c: 52: detect_mode();
-"52
-[e ( _detect_mode ..  ]
-"54
-[v _cnt `uc ~T0 @X0 1 a ]
-[; ;main.c: 54: uint8_t cnt = 0;
-[e = _cnt -> -> 0 `i `uc ]
-[; ;main.c: 56: while(1){
 "56
+[v _mode `uc ~T0 @X0 1 a ]
+[; ;main.c: 56: uint8_t mode = detect_mode();
+[e = _mode ( _detect_mode ..  ]
+"58
+[v _cnt `uc ~T0 @X0 1 a ]
+[; ;main.c: 58: uint8_t cnt = 0;
+[e = _cnt -> -> 0 `i `uc ]
+[; ;main.c: 60: while(1){
+"60
 [e :U 359 ]
 {
-[; ;main.c: 58: while(PORTAbits.RA1 == 1){
-"58
+[; ;main.c: 61: while(PORTAbits.RA1 == 1){
+"61
 [e $U 361  ]
 [e :U 362 ]
 {
-[; ;main.c: 59: _delay((unsigned long)((5)*(32000000/4000000.0)));
-"59
+[; ;main.c: 62: _delay((unsigned long)((5)*(32000000/4000000.0)));
+"62
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"60
+"63
 }
 [e :U 361 ]
-"58
+"61
 [e $ == -> . . _PORTAbits 0 1 `i -> 1 `i 362  ]
 [e :U 363 ]
-[; ;main.c: 60: }
-[; ;main.c: 62: recv_daikin_reader();
-"62
-[e ( _recv_daikin_reader ..  ]
-[; ;main.c: 64: recv_reader();
-"64
-[e ( _recv_reader ..  ]
-[; ;main.c: 65: recv_daikin_frame(160);
+[; ;main.c: 63: }
+[; ;main.c: 65: if(mode == 'D'){
 "65
-[e ( _recv_daikin_frame (1 -> -> 160 `i `uc ]
-[; ;main.c: 66: putch('|');
+[e $ ! == -> _mode `ui -> 68 `ui 364  ]
+{
+[; ;main.c: 66: DAIKIN();
 "66
-[e ( _putch (1 -> -> 124 `ui `uc ]
-[; ;main.c: 68: _delay((unsigned long)((35)*(32000000/4000.0)));
+[e ( _DAIKIN ..  ]
+"67
+}
+[; ;main.c: 67: }else if(mode == 'A'){
+[e $U 365  ]
+[e :U 364 ]
+[e $ ! == -> _mode `ui -> 65 `ui 366  ]
+{
+[; ;main.c: 68: AEHA();
 "68
-[e ( __delay (1 -> * -> -> 35 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 70: recv_reader();
+[e ( _AEHA ..  ]
+"69
+}
+[; ;main.c: 69: }else if(mode == 'S'){
+[e $U 367  ]
+[e :U 366 ]
+[e $ ! == -> _mode `ui -> 83 `ui 368  ]
+{
+[; ;main.c: 70: SONY();
 "70
-[e ( _recv_reader ..  ]
-[; ;main.c: 71: recv_daikin_frame(152);
+[e ( _SONY ..  ]
 "71
-[e ( _recv_daikin_frame (1 -> -> 152 `i `uc ]
-[; ;main.c: 72: putch('|');
+}
+[; ;main.c: 71: }else if(mode == 'N'){
+[e $U 369  ]
+[e :U 368 ]
+[e $ ! == -> _mode `ui -> 78 `ui 370  ]
+{
+[; ;main.c: 72: NEC();
 "72
-[e ( _putch (1 -> -> 124 `ui `uc ]
-[; ;main.c: 74: printf("end\r\n");
-"74
-[e ( _printf :s 1C ]
-[; ;main.c: 75: printf("[%d]--------------------------\r\n", cnt);
+[e ( _NEC ..  ]
+"73
+}
+[e :U 370 ]
 "75
-[e ( _printf , (. :s 2C -> _cnt `i ]
-[; ;main.c: 76: cnt++;
+[e :U 369 ]
+[e :U 367 ]
+[e :U 365 ]
+[; ;main.c: 73: }
+[; ;main.c: 75: printf("end\r\n");
+[e ( _printf :s 1C ]
+[; ;main.c: 76: printf("[%d]--------------------------\r\n", cnt);
 "76
+[e ( _printf , (. :s 2C -> _cnt `i ]
+[; ;main.c: 77: cnt++;
+"77
 [e ++ _cnt -> -> 1 `i `uc ]
-"90
+"78
 }
 [e :U 358 ]
-"56
+"60
 [e $U 359  ]
 [e :U 360 ]
-[; ;main.c: 90: }
-[; ;main.c: 91: }
-"91
+[; ;main.c: 78: }
+[; ;main.c: 79: }
+"79
 [e :UE 354 ]
 }
-"93
+"81
 [v _detect_mode `(uc ~T0 @X0 1 ef ]
 {
-[; ;main.c: 93: uint8_t detect_mode(){
+[; ;main.c: 81: uint8_t detect_mode(){
 [e :U _detect_mode ]
 [f ]
-[; ;main.c: 94: printf("IR Reciver\r\n");
-"94
+[; ;main.c: 82: printf("IR Reciver Version 1.0.0\r\n");
+"82
 [e ( _printf :s 3C ]
-[; ;main.c: 95: printf("-----------------------------\r\n");
-"95
+[; ;main.c: 83: printf("-----------------------------\r\n");
+"83
 [e ( _printf :s 4C ]
-[; ;main.c: 96: printf("NEC:N | AEHA:A | DAIKIN:D | SONY:S|(*default:D)\r\n");
-"96
+[; ;main.c: 84: printf("NEC:N | AEHA:A | DAIKIN:D | SONY:S|(*default:D)\r\n");
+"84
 [e ( _printf :s 5C ]
-"98
+"86
 [v _mode `uc ~T0 @X0 1 a ]
-[; ;main.c: 98: uint8_t mode = getch();
+[; ;main.c: 86: uint8_t mode = getch();
 [e = _mode ( _getch ..  ]
-[; ;main.c: 100: if(mode == 'N'){
-"100
-[e $ ! == -> _mode `ui -> 78 `ui 365  ]
+[; ;main.c: 88: if(mode == 'N'){
+"88
+[e $ ! == -> _mode `ui -> 78 `ui 372  ]
 {
-[; ;main.c: 101: printf("Detect NEC\r\n");
-"101
+[; ;main.c: 89: printf("Detect NEC\r\n");
+"89
 [e ( _printf :s 6C ]
-"102
-}
-[; ;main.c: 102: }else if(mode == 'A'){
-[e $U 366  ]
-[e :U 365 ]
-[e $ ! == -> _mode `ui -> 65 `ui 367  ]
-{
-[; ;main.c: 103: printf("Detect AEHA\r\n");
-"103
-[e ( _printf :s 7C ]
-"104
-}
-[; ;main.c: 104: }else if(mode == 'D'){
-[e $U 368  ]
-[e :U 367 ]
-[e $ ! == -> _mode `ui -> 68 `ui 369  ]
-{
-[; ;main.c: 105: printf("Detect DAIKIN\r\n");
-"105
-[e ( _printf :s 8C ]
-"106
-}
-[; ;main.c: 106: }else if(mode == 'S'){
-[e $U 370  ]
-[e :U 369 ]
-[e $ ! == -> _mode `ui -> 83 `ui 371  ]
-{
-[; ;main.c: 107: printf("Detect SONY\r\n");
-"107
-[e ( _printf :s 9C ]
-"108
-}
-[; ;main.c: 108: }else{
-[e $U 372  ]
-[e :U 371 ]
-{
-[; ;main.c: 109: mode = 'D';
-"109
-[e = _mode -> -> 68 `ui `uc ]
-"110
-}
-[e :U 372 ]
-[e :U 370 ]
-[e :U 368 ]
-[e :U 366 ]
-[; ;main.c: 110: }
-[; ;main.c: 111: printf("-----------------------------\r\n");
-"111
-[e ( _printf :s 10C ]
-[; ;main.c: 113: return mode;
-"113
-[e ) _mode ]
-[e $UE 364  ]
-[; ;main.c: 114: }
-"114
-[e :UE 364 ]
-}
-"121
-[v _recv_reader `(uc ~T0 @X0 1 ef ]
-{
-[; ;main.c: 121: uint8_t recv_reader(){
-[e :U _recv_reader ]
-[f ]
-"122
-[v _width `i ~T0 @X0 1 a ]
-[; ;main.c: 122: int width = 0;
-[e = _width -> 0 `i ]
-[; ;main.c: 123: while(PORTAbits.RA1 == 0){
-"123
-[e $U 374  ]
+[; ;main.c: 90: do { LATAbits.LATA0 = 1; } while(0);
+"90
 [e :U 375 ]
 {
-[; ;main.c: 124: width++;
-"124
-[e ++ _width -> 1 `i ]
-[; ;main.c: 125: _delay((unsigned long)((5)*(32000000/4000000.0)));
-"125
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"126
+[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
 }
 [e :U 374 ]
-"123
-[e $ == -> . . _PORTAbits 0 1 `i -> 0 `i 375  ]
-[e :U 376 ]
-[; ;main.c: 126: }
-[; ;main.c: 128: if(width > 800){
-"128
-[e $ ! > _width -> 800 `i 377  ]
-{
-[; ;main.c: 129: return -1;
-"129
-[e ) -> -U -> 1 `i `uc ]
-[e $UE 373  ]
-"130
+"91
 }
-[e :U 377 ]
-[; ;main.c: 130: }
-[; ;main.c: 132: width = 0;
-"132
-[e = _width -> 0 `i ]
-[; ;main.c: 133: while(PORTAbits.RA1 == 1){
-"133
-[e $U 378  ]
-[e :U 379 ]
+[; ;main.c: 91: }else if(mode == 'A'){
+[e $U 376  ]
+[e :U 372 ]
+[e $ ! == -> _mode `ui -> 65 `ui 377  ]
 {
-[; ;main.c: 134: width++;
-"134
-[e ++ _width -> 1 `i ]
-[; ;main.c: 135: _delay((unsigned long)((5)*(32000000/4000000.0)));
-"135
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-[; ;main.c: 137: if(width > 500){
-"137
-[e $ ! > _width -> 500 `i 381  ]
-{
-[; ;main.c: 138: return -1;
-"138
-[e ) -> -U -> 1 `i `uc ]
-[e $UE 373  ]
-"139
-}
-[e :U 381 ]
-"140
-}
-[e :U 378 ]
-"133
-[e $ == -> . . _PORTAbits 0 1 `i -> 1 `i 379  ]
+[; ;main.c: 92: printf("Detect AEHA\r\n");
+"92
+[e ( _printf :s 7C ]
+[; ;main.c: 93: do { LATAbits.LATA7 = 1; } while(0);
+"93
 [e :U 380 ]
-[; ;main.c: 139: }
-[; ;main.c: 140: }
-[; ;main.c: 142: return 0;
-"142
-[e ) -> -> 0 `i `uc ]
-[e $UE 373  ]
-[; ;main.c: 143: }
-"143
-[e :UE 373 ]
+{
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
 }
-"148
-[v _recv_data `(v ~T0 @X0 1 ef2`*uc`uc ]
-{
-[; ;main.c: 148: void recv_data(uint8_t *data, uint8_t size){
-[e :U _recv_data ]
-[v _data `*uc ~T0 @X0 1 r1 ]
-[v _size `uc ~T0 @X0 1 r2 ]
-[f ]
-"149
-[v _i `uc ~T0 @X0 1 a ]
-[; ;main.c: 149: uint8_t i;
-[; ;main.c: 150: for(i = 0; i < size; i++){
-"150
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 386  ]
-[e :U 383 ]
-{
-"151
-[v _a `uc ~T0 @X0 1 a ]
-[; ;main.c: 151: uint8_t a = bit_find();
-[e = _a ( _bit_find ..  ]
-[; ;main.c: 152: if(a == 3 || a == 2) break;
-"152
-[e $ ! || == -> _a `i -> 3 `i == -> _a `i -> 2 `i 387  ]
-[e $U 384  ]
-[e :U 387 ]
-[; ;main.c: 154: data[i] = a;
-"154
-[e = *U + _data * -> _i `ux -> -> # *U _data `ui `ux _a ]
-[; ;main.c: 155: putch(a + '0');
-"155
-[e ( _putch (1 -> + -> _a `ui -> 48 `ui `uc ]
-"156
+[e :U 379 ]
+"94
 }
-"150
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 386 ]
-[e $ < -> _i `i -> _size `i 383  ]
+[; ;main.c: 94: }else if(mode == 'D'){
+[e $U 381  ]
+[e :U 377 ]
+[e $ ! == -> _mode `ui -> 68 `ui 382  ]
+{
+[; ;main.c: 95: printf("Detect DAIKIN\r\n");
+"95
+[e ( _printf :s 8C ]
+[; ;main.c: 96: do { LATAbits.LATA6 = 1; } while(0);
+"96
+[e :U 385 ]
+{
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+}
 [e :U 384 ]
-"156
+"97
 }
-[; ;main.c: 156: }
-[; ;main.c: 157: }
-"157
-[e :UE 382 ]
-}
-"159
-[v _recv_daikin_reader `(v ~T0 @X0 1 ef ]
+[; ;main.c: 97: }else if(mode == 'S'){
+[e $U 386  ]
+[e :U 382 ]
+[e $ ! == -> _mode `ui -> 83 `ui 387  ]
 {
-[; ;main.c: 159: void recv_daikin_reader(){
-[e :U _recv_daikin_reader ]
-[f ]
-"160
-[v _i `uc ~T0 @X0 1 a ]
-[; ;main.c: 160: uint8_t i;
-[; ;main.c: 161: for(i = 0; i < 5; i++){
-"161
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 389  ]
-[e $U 390  ]
-[e :U 389 ]
-{
-"162
-[v _a `uc ~T0 @X0 1 a ]
-[; ;main.c: 162: uint8_t a = bit_find();
-[e = _a ( _bit_find ..  ]
-[; ;main.c: 163: putch(a + '0');
-"163
-[e ( _putch (1 -> + -> _a `ui -> 48 `ui `uc ]
-"164
-}
-"161
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 389  ]
+[; ;main.c: 98: printf("Detect SONY\r\n");
+"98
+[e ( _printf :s 9C ]
+[; ;main.c: 99: do { LATBbits.LATB7 = 1; } while(0);
+"99
 [e :U 390 ]
-"164
+{
+[e = . . _LATBbits 0 7 -> -> 1 `i `uc ]
 }
-[; ;main.c: 164: }
-[; ;main.c: 166: _delay((unsigned long)((25)*(32000000/4000.0)));
-"166
-[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 167: printf("||");
-"167
+[e :U 389 ]
+"100
+}
+[; ;main.c: 100: }else{
+[e $U 391  ]
+[e :U 387 ]
+{
+[; ;main.c: 101: mode = 'D';
+"101
+[e = _mode -> -> 68 `ui `uc ]
+[; ;main.c: 102: do { LATAbits.LATA6 = 1; } while(0);
+"102
+[e :U 394 ]
+{
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+}
+[e :U 393 ]
+"103
+}
+[e :U 391 ]
+[e :U 386 ]
+[e :U 381 ]
+[e :U 376 ]
+[; ;main.c: 103: }
+[; ;main.c: 104: printf("-----------------------------\r\n");
+"104
+[e ( _printf :s 10C ]
+[; ;main.c: 106: return mode;
+"106
+[e ) _mode ]
+[e $UE 371  ]
+[; ;main.c: 107: }
+"107
+[e :UE 371 ]
+}
+"109
+[v _AEHA `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 109: void AEHA(){
+[e :U _AEHA ]
+[f ]
+[; ;main.c: 110: recv_reader();
+"110
+[e ( _recv_reader ..  ]
+[; ;main.c: 111: recv_data(48);
+"111
+[e ( _recv_data (1 -> -> 48 `i `uc ]
+[; ;main.c: 112: putch('|');
+"112
+[e ( _putch (1 -> -> 124 `ui `uc ]
+[; ;main.c: 113: printf("\r\n");
+"113
 [e ( _printf :s 11C ]
-[; ;main.c: 168: }
-"168
-[e :UE 388 ]
+[; ;main.c: 114: }
+"114
+[e :UE 395 ]
+}
+"116
+[v _DAIKIN `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 116: void DAIKIN(){
+[e :U _DAIKIN ]
+[f ]
+[; ;main.c: 117: recv_daikin_reader();
+"117
+[e ( _recv_daikin_reader ..  ]
+[; ;main.c: 119: recv_reader();
+"119
+[e ( _recv_reader ..  ]
+[; ;main.c: 120: recv_daikin_frame(160);
+"120
+[e ( _recv_daikin_frame (1 -> -> 160 `i `uc ]
+[; ;main.c: 121: putch('|');
+"121
+[e ( _putch (1 -> -> 124 `ui `uc ]
+[; ;main.c: 123: _delay((unsigned long)((35)*(32000000/4000.0)));
+"123
+[e ( __delay (1 -> * -> -> 35 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 125: recv_reader();
+"125
+[e ( _recv_reader ..  ]
+[; ;main.c: 126: recv_daikin_frame(152);
+"126
+[e ( _recv_daikin_frame (1 -> -> 152 `i `uc ]
+[; ;main.c: 127: putch('|');
+"127
+[e ( _putch (1 -> -> 124 `ui `uc ]
+[; ;main.c: 128: }
+"128
+[e :UE 396 ]
+}
+"130
+[v _SONY `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 130: void SONY(){
+[e :U _SONY ]
+[f ]
+[; ;main.c: 132: }
+"132
+[e :UE 397 ]
+}
+"134
+[v _NEC `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 134: void NEC(){
+[e :U _NEC ]
+[f ]
+[; ;main.c: 136: }
+"136
+[e :UE 398 ]
+}
+"143
+[v _recv_reader `(uc ~T0 @X0 1 ef ]
+{
+[; ;main.c: 143: uint8_t recv_reader(){
+[e :U _recv_reader ]
+[f ]
+"144
+[v _width `i ~T0 @X0 1 a ]
+[; ;main.c: 144: int width = 0;
+[e = _width -> 0 `i ]
+[; ;main.c: 145: while(PORTAbits.RA1 == 0){
+"145
+[e $U 400  ]
+[e :U 401 ]
+{
+[; ;main.c: 146: width++;
+"146
+[e ++ _width -> 1 `i ]
+[; ;main.c: 147: _delay((unsigned long)((5)*(32000000/4000000.0)));
+"147
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+"148
+}
+[e :U 400 ]
+"145
+[e $ == -> . . _PORTAbits 0 1 `i -> 0 `i 401  ]
+[e :U 402 ]
+[; ;main.c: 148: }
+[; ;main.c: 150: if(width > 800){
+"150
+[e $ ! > _width -> 800 `i 403  ]
+{
+[; ;main.c: 151: return -1;
+"151
+[e ) -> -U -> 1 `i `uc ]
+[e $UE 399  ]
+"152
+}
+[e :U 403 ]
+[; ;main.c: 152: }
+[; ;main.c: 154: width = 0;
+"154
+[e = _width -> 0 `i ]
+[; ;main.c: 155: while(PORTAbits.RA1 == 1){
+"155
+[e $U 404  ]
+[e :U 405 ]
+{
+[; ;main.c: 156: width++;
+"156
+[e ++ _width -> 1 `i ]
+[; ;main.c: 157: _delay((unsigned long)((5)*(32000000/4000000.0)));
+"157
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+[; ;main.c: 159: if(width > 500){
+"159
+[e $ ! > _width -> 500 `i 407  ]
+{
+[; ;main.c: 160: return -1;
+"160
+[e ) -> -U -> 1 `i `uc ]
+[e $UE 399  ]
+"161
+}
+[e :U 407 ]
+"162
+}
+[e :U 404 ]
+"155
+[e $ == -> . . _PORTAbits 0 1 `i -> 1 `i 405  ]
+[e :U 406 ]
+[; ;main.c: 161: }
+[; ;main.c: 162: }
+[; ;main.c: 164: return 0;
+"164
+[e ) -> -> 0 `i `uc ]
+[e $UE 399  ]
+[; ;main.c: 165: }
+"165
+[e :UE 399 ]
 }
 "170
-[v _recv_daikin_frame `(v ~T0 @X0 1 ef1`uc ]
+[v _recv_data `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 170: void recv_daikin_frame(uint8_t size){
-[e :U _recv_daikin_frame ]
+[; ;main.c: 170: void recv_data(uint8_t size){
+[e :U _recv_data ]
 [v _size `uc ~T0 @X0 1 r1 ]
 [f ]
 "171
@@ -3274,8 +3332,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "172
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 396  ]
-[e :U 393 ]
+[e $U 412  ]
+[e :U 409 ]
 {
 "173
 [v _a `uc ~T0 @X0 1 a ]
@@ -3286,184 +3344,206 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _putch (1 -> + -> _a `ui -> 48 `ui `uc ]
 [; ;main.c: 175: if(a == 3 || a == 2) break;
 "175
-[e $ ! || == -> _a `i -> 3 `i == -> _a `i -> 2 `i 397  ]
-[e $U 394  ]
-[e :U 397 ]
+[e $ ! || == -> _a `i -> 3 `i == -> _a `i -> 2 `i 413  ]
+[e $U 410  ]
+[e :U 413 ]
 "176
 }
 "172
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 396 ]
-[e $ < -> _i `i -> _size `i 393  ]
-[e :U 394 ]
+[e :U 412 ]
+[e $ < -> _i `i -> _size `i 409  ]
+[e :U 410 ]
 "176
 }
 [; ;main.c: 176: }
 [; ;main.c: 177: }
 "177
-[e :UE 392 ]
-}
-"190
-[v _bit_find `(uc ~T0 @X0 1 ef ]
-{
-[; ;main.c: 190: uint8_t bit_find(){
-[e :U _bit_find ]
-[f ]
-"191
-[v _width `i ~T0 @X0 1 a ]
-[; ;main.c: 191: int width = 0;
-[e = _width -> 0 `i ]
-[; ;main.c: 192: while(PORTAbits.RA1 == 0){
-"192
-[e $U 399  ]
-[e :U 400 ]
-{
-[; ;main.c: 193: width++;
-"193
-[e ++ _width -> 1 `i ]
-[; ;main.c: 194: _delay((unsigned long)((5)*(32000000/4000000.0)));
-"194
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"195
-}
-[e :U 399 ]
-"192
-[e $ == -> . . _PORTAbits 0 1 `i -> 0 `i 400  ]
-[e :U 401 ]
-[; ;main.c: 195: }
-[; ;main.c: 204: width = 0;
-"204
-[e = _width -> 0 `i ]
-[; ;main.c: 205: while(PORTAbits.RA1 == 1){
-"205
-[e $U 402  ]
-[e :U 403 ]
-{
-[; ;main.c: 206: width++;
-"206
-[e ++ _width -> 1 `i ]
-[; ;main.c: 207: _delay((unsigned long)((5)*(32000000/4000000.0)));
-"207
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-[; ;main.c: 209: if(width > 300){
-"209
-[e $ ! > _width -> 300 `i 405  ]
-{
-[; ;main.c: 210: return 3;
-"210
-[e ) -> -> 3 `i `uc ]
-[e $UE 398  ]
-"211
-}
-[e :U 405 ]
-"212
-}
-[e :U 402 ]
-"205
-[e $ == -> . . _PORTAbits 0 1 `i -> 1 `i 403  ]
-[e :U 404 ]
-[; ;main.c: 211: }
-[; ;main.c: 212: }
-[; ;main.c: 214: if(width < 100){
-"214
-[e $ ! < _width -> 100 `i 406  ]
-{
-[; ;main.c: 215: return 0;
-"215
-[e ) -> -> 0 `i `uc ]
-[e $UE 398  ]
-"216
-}
-[; ;main.c: 216: }else{
-[e $U 407  ]
-[e :U 406 ]
-{
-[; ;main.c: 217: return 1;
-"217
-[e ) -> -> 1 `i `uc ]
-[e $UE 398  ]
-"218
-}
-[e :U 407 ]
-[; ;main.c: 218: }
-[; ;main.c: 219: }
-"219
-[e :UE 398 ]
-}
-"221
-[v _byte_recv `(uc ~T0 @X0 1 ef ]
-{
-[; ;main.c: 221: uint8_t byte_recv(){
-[e :U _byte_recv ]
-[f ]
-"222
-[v _mask `uc ~T0 @X0 1 a ]
-[v _i `uc ~T0 @X0 1 a ]
-[v _data `uc ~T0 @X0 1 a ]
-[; ;main.c: 222: uint8_t mask, i, data;
-[; ;main.c: 223: data = 0;
-"223
-[e = _data -> -> 0 `i `uc ]
-[; ;main.c: 224: mask = 0x80;
-"224
-[e = _mask -> -> 128 `i `uc ]
-[; ;main.c: 225: for(i = 0; i < 8; i++){
-"225
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 409  ]
-[e $U 410  ]
-[e :U 409 ]
-{
-"226
-[v _a `uc ~T0 @X0 1 a ]
-[; ;main.c: 226: uint8_t a = bit_find();
-[e = _a ( _bit_find ..  ]
-[; ;main.c: 227: if(a == 3) break;
-"227
-[e $ ! == -> _a `i -> 3 `i 412  ]
-[e $U 410  ]
-[e :U 412 ]
-[; ;main.c: 228: if(a == 1){
-"228
-[e $ ! == -> _a `i -> 1 `i 413  ]
-{
-[; ;main.c: 229: data |= mask;
-"229
-[e =| _data _mask ]
-"230
-}
-[e :U 413 ]
-[; ;main.c: 230: }
-[; ;main.c: 231: mask >>= 1;
-"231
-[e =>> _mask -> 1 `i ]
-"232
-}
-"225
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 409  ]
-[e :U 410 ]
-"232
-}
-[; ;main.c: 232: }
-[; ;main.c: 234: return data;
-"234
-[e ) _data ]
-[e $UE 408  ]
-[; ;main.c: 235: }
-"235
 [e :UE 408 ]
 }
+"179
+[v _recv_daikin_reader `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 179: void recv_daikin_reader(){
+[e :U _recv_daikin_reader ]
+[f ]
+"180
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 180: uint8_t i;
+[; ;main.c: 181: for(i = 0; i < 5; i++){
+"181
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 5 `i 415  ]
+[e $U 416  ]
+[e :U 415 ]
+{
+"182
+[v _a `uc ~T0 @X0 1 a ]
+[; ;main.c: 182: uint8_t a = bit_find();
+[e = _a ( _bit_find ..  ]
+[; ;main.c: 183: putch(a + '0');
+"183
+[e ( _putch (1 -> + -> _a `ui -> 48 `ui `uc ]
+"184
+}
+"181
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 415  ]
+[e :U 416 ]
+"184
+}
+[; ;main.c: 184: }
+[; ;main.c: 186: _delay((unsigned long)((25)*(32000000/4000.0)));
+"186
+[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 187: printf("||");
+"187
+[e ( _printf :s 12C ]
+[; ;main.c: 188: }
+"188
+[e :UE 414 ]
+}
+"190
+[v _recv_daikin_frame `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;main.c: 190: void recv_daikin_frame(uint8_t size){
+[e :U _recv_daikin_frame ]
+[v _size `uc ~T0 @X0 1 r1 ]
+[f ]
+"191
+[v _i `uc ~T0 @X0 1 a ]
+[; ;main.c: 191: uint8_t i;
+[; ;main.c: 192: for(i = 0; i < size; i++){
+"192
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 422  ]
+[e :U 419 ]
+{
+"193
+[v _a `uc ~T0 @X0 1 a ]
+[; ;main.c: 193: uint8_t a = bit_find();
+[e = _a ( _bit_find ..  ]
+[; ;main.c: 194: putch(a + '0');
+"194
+[e ( _putch (1 -> + -> _a `ui -> 48 `ui `uc ]
+[; ;main.c: 195: if(a == 3 || a == 2) break;
+"195
+[e $ ! || == -> _a `i -> 3 `i == -> _a `i -> 2 `i 423  ]
+[e $U 420  ]
+[e :U 423 ]
+"196
+}
+"192
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 422 ]
+[e $ < -> _i `i -> _size `i 419  ]
+[e :U 420 ]
+"196
+}
+[; ;main.c: 196: }
+[; ;main.c: 197: }
+"197
+[e :UE 418 ]
+}
+"210
+[v _bit_find `(uc ~T0 @X0 1 ef ]
+{
+[; ;main.c: 210: uint8_t bit_find(){
+[e :U _bit_find ]
+[f ]
+"211
+[v _width `i ~T0 @X0 1 a ]
+[; ;main.c: 211: int width = 0;
+[e = _width -> 0 `i ]
+[; ;main.c: 212: while(PORTAbits.RA1 == 0){
+"212
+[e $U 425  ]
+[e :U 426 ]
+{
+[; ;main.c: 213: width++;
+"213
+[e ++ _width -> 1 `i ]
+[; ;main.c: 214: _delay((unsigned long)((5)*(32000000/4000000.0)));
+"214
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+"215
+}
+[e :U 425 ]
+"212
+[e $ == -> . . _PORTAbits 0 1 `i -> 0 `i 426  ]
+[e :U 427 ]
+[; ;main.c: 215: }
+[; ;main.c: 224: width = 0;
+"224
+[e = _width -> 0 `i ]
+[; ;main.c: 225: while(PORTAbits.RA1 == 1){
+"225
+[e $U 428  ]
+[e :U 429 ]
+{
+[; ;main.c: 226: width++;
+"226
+[e ++ _width -> 1 `i ]
+[; ;main.c: 227: _delay((unsigned long)((5)*(32000000/4000000.0)));
+"227
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+[; ;main.c: 229: if(width > 300){
+"229
+[e $ ! > _width -> 300 `i 431  ]
+{
+[; ;main.c: 230: return 3;
+"230
+[e ) -> -> 3 `i `uc ]
+[e $UE 424  ]
+"231
+}
+[e :U 431 ]
+"232
+}
+[e :U 428 ]
+"225
+[e $ == -> . . _PORTAbits 0 1 `i -> 1 `i 429  ]
+[e :U 430 ]
+[; ;main.c: 231: }
+[; ;main.c: 232: }
+[; ;main.c: 234: if(width < 100){
+"234
+[e $ ! < _width -> 100 `i 432  ]
+{
+[; ;main.c: 235: return 0;
+"235
+[e ) -> -> 0 `i `uc ]
+[e $UE 424  ]
+"236
+}
+[; ;main.c: 236: }else{
+[e $U 433  ]
+[e :U 432 ]
+{
+[; ;main.c: 237: return 1;
+"237
+[e ) -> -> 1 `i `uc ]
+[e $UE 424  ]
+"238
+}
+[e :U 433 ]
+[; ;main.c: 238: }
+[; ;main.c: 239: }
+"239
+[e :UE 424 ]
+}
 [p f _printf 8388736 ]
-[a 11C 124 124 0 ]
-[a 3C 73 82 32 82 101 99 105 118 101 114 13 10 0 ]
+[a 12C 124 124 0 ]
 [a 1C 101 110 100 13 10 0 ]
 [a 9C 68 101 116 101 99 116 32 83 79 78 89 13 10 0 ]
 [a 8C 68 101 116 101 99 116 32 68 65 73 75 73 78 13 10 0 ]
 [a 6C 68 101 116 101 99 116 32 78 69 67 13 10 0 ]
 [a 7C 68 101 116 101 99 116 32 65 69 72 65 13 10 0 ]
+[a 3C 73 82 32 82 101 99 105 118 101 114 32 86 101 114 115 105 111 110 32 49 46 48 46 48 13 10 0 ]
 [a 2C 91 37 100 93 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 10 0 ]
 [a 4C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 10 0 ]
 [a 10C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 10 0 ]
 [a 5C 78 69 67 58 78 32 124 32 65 69 72 65 58 65 32 124 32 68 65 73 75 73 78 58 68 32 124 32 83 79 78 89 58 83 124 40 42 100 101 102 97 117 108 116 58 68 41 13 10 0 ]
+[a 11C 13 10 0 ]

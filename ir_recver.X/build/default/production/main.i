@@ -4207,10 +4207,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 144 "mcc_generated_files/pin_manager.h"
+# 197 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 156
+# 209
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdint.h"
@@ -4372,14 +4372,6 @@ void OSCILLATOR_Initialize(void);
 # 95
 void WDT_Initialize(void);
 
-# 15 "sender.h"
-void pwm_out();
-void high_bit();
-void low_bit();
-void send_reader();
-void send_data(uint8_t *data, uint8_t size);
-void send_data_ch(char *data, uint8_t size);
-
 # 4 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\__size_t.h"
 typedef unsigned size_t;
 
@@ -4426,7 +4418,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 31 "main.c"
+# 30 "main.c"
 void putch(char data){
 EUSART_Write(data);
 }
@@ -4435,7 +4427,7 @@ uint8_t getch(){
 return EUSART_Read();
 }
 
-void recv_data(uint8_t *data, uint8_t size);
+void recv_data(uint8_t size);
 uint8_t recv_reader();
 uint8_t bit_find();
 uint8_t byte_recv();
@@ -4443,21 +4435,77 @@ void recv_daikin_reader();
 void recv_daikin_frame(uint8_t size);
 uint8_t detect_mode();
 
+void DAIKIN();
+void AEHA();
+void SONY();
+void NEC();
+
+
 void main(void)
 {
 SYSTEM_Initialize();
 do { LATAbits.LATA2 = 1; } while(0);
-
-detect_mode();
+uint8_t mode = detect_mode();
 
 uint8_t cnt = 0;
 
 while(1){
-
 while(PORTAbits.RA1 == 1){
 _delay((unsigned long)((5)*(32000000/4000000.0)));
 }
 
+if(mode == 'D'){
+DAIKIN();
+}else if(mode == 'A'){
+AEHA();
+}else if(mode == 'S'){
+SONY();
+}else if(mode == 'N'){
+NEC();
+}
+
+printf("end\r\n");
+printf("[%d]--------------------------\r\n", cnt);
+cnt++;
+}
+}
+
+uint8_t detect_mode(){
+printf("IR Reciver Version 1.0.0\r\n");
+printf("-----------------------------\r\n");
+printf("NEC:N | AEHA:A | DAIKIN:D | SONY:S|(*default:D)\r\n");
+
+uint8_t mode = getch();
+
+if(mode == 'N'){
+printf("Detect NEC\r\n");
+do { LATAbits.LATA0 = 1; } while(0);
+}else if(mode == 'A'){
+printf("Detect AEHA\r\n");
+do { LATAbits.LATA7 = 1; } while(0);
+}else if(mode == 'D'){
+printf("Detect DAIKIN\r\n");
+do { LATAbits.LATA6 = 1; } while(0);
+}else if(mode == 'S'){
+printf("Detect SONY\r\n");
+do { LATBbits.LATB7 = 1; } while(0);
+}else{
+mode = 'D';
+do { LATAbits.LATA6 = 1; } while(0);
+}
+printf("-----------------------------\r\n");
+
+return mode;
+}
+
+void AEHA(){
+recv_reader();
+recv_data(48);
+putch('|');
+printf("\r\n");
+}
+
+void DAIKIN(){
 recv_daikin_reader();
 
 recv_reader();
@@ -4469,39 +4517,17 @@ _delay((unsigned long)((35)*(32000000/4000.0)));
 recv_reader();
 recv_daikin_frame(152);
 putch('|');
-
-printf("end\r\n");
-printf("[%d]--------------------------\r\n", cnt);
-cnt++;
-
-# 90
-}
 }
 
-uint8_t detect_mode(){
-printf("IR Reciver\r\n");
-printf("-----------------------------\r\n");
-printf("NEC:N | AEHA:A | DAIKIN:D | SONY:S|(*default:D)\r\n");
+void SONY(){
 
-uint8_t mode = getch();
-
-if(mode == 'N'){
-printf("Detect NEC\r\n");
-}else if(mode == 'A'){
-printf("Detect AEHA\r\n");
-}else if(mode == 'D'){
-printf("Detect DAIKIN\r\n");
-}else if(mode == 'S'){
-printf("Detect SONY\r\n");
-}else{
-mode = 'D';
-}
-printf("-----------------------------\r\n");
-
-return mode;
 }
 
-# 121
+void NEC(){
+
+}
+
+# 143
 uint8_t recv_reader(){
 int width = 0;
 while(PORTAbits.RA1 == 0){
@@ -4526,15 +4552,13 @@ return -1;
 return 0;
 }
 
-# 148
-void recv_data(uint8_t *data, uint8_t size){
+# 170
+void recv_data(uint8_t size){
 uint8_t i;
 for(i = 0; i < size; i++){
 uint8_t a = bit_find();
-if(a == 3 || a == 2) break;
-
-data[i] = a;
 putch(a + '0');
+if(a == 3 || a == 2) break;
 }
 }
 
@@ -4558,7 +4582,7 @@ if(a == 3 || a == 2) break;
 }
 }
 
-# 190
+# 210
 uint8_t bit_find(){
 int width = 0;
 while(PORTAbits.RA1 == 0){
@@ -4566,7 +4590,7 @@ width++;
 _delay((unsigned long)((5)*(32000000/4000000.0)));
 }
 
-# 204
+# 224
 width = 0;
 while(PORTAbits.RA1 == 1){
 width++;
@@ -4582,20 +4606,4 @@ return 0;
 }else{
 return 1;
 }
-}
-
-uint8_t byte_recv(){
-uint8_t mask, i, data;
-data = 0;
-mask = 0x80;
-for(i = 0; i < 8; i++){
-uint8_t a = bit_find();
-if(a == 3) break;
-if(a == 1){
-data |= mask;
-}
-mask >>= 1;
-}
-
-return data;
 }

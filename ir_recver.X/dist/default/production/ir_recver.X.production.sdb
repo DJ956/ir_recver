@@ -17,21 +17,31 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"31 D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+"30 D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
 [v _putch putch `(v  1 e 1 0 ]
-"35
+"34
 [v _getch getch `(uc  1 e 1 0 ]
-"47
+"52
 [v _main main `(v  1 e 1 0 ]
-"93
+"81
 [v _detect_mode detect_mode `(uc  1 e 1 0 ]
-"121
+"109
+[v _AEHA AEHA `(v  1 e 1 0 ]
+"116
+[v _DAIKIN DAIKIN `(v  1 e 1 0 ]
+"130
+[v _SONY SONY `(v  1 e 1 0 ]
+"134
+[v _NEC NEC `(v  1 e 1 0 ]
+"143
 [v _recv_reader recv_reader `(uc  1 e 1 0 ]
-"159
-[v _recv_daikin_reader recv_daikin_reader `(v  1 e 1 0 ]
 "170
-[v _recv_daikin_frame recv_daikin_frame `(v  1 e 1 0 ]
+[v _recv_data recv_data `(v  1 e 1 0 ]
+"179
+[v _recv_daikin_reader recv_daikin_reader `(v  1 e 1 0 ]
 "190
+[v _recv_daikin_frame recv_daikin_frame `(v  1 e 1 0 ]
+"210
 [v _bit_find bit_find `(uc  1 e 1 0 ]
 "66 D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -132,6 +142,18 @@
 [v _LATAbits LATAbits `VES274  1 e 1 @268 ]
 "2096
 [v _LATB LATB `VEuc  1 e 1 @269 ]
+[s S338 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2113
+[u S347 . 1 `S338 1 . 1 0 ]
+[v _LATBbits LATBbits `VES347  1 e 1 @269 ]
 "2430
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "2779
@@ -202,116 +224,26 @@
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "60
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
-"47 D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+"52 D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"54
-[v main@cnt cnt `uc  1 a 1 20 ]
-"91
+"56
+[v main@mode mode `uc  1 a 1 23 ]
+"58
+[v main@cnt cnt `uc  1 a 1 22 ]
+"79
 } 0
-"121
-[v _recv_reader recv_reader `(uc  1 e 1 0 ]
-{
-"122
-[v recv_reader@width width `i  1 a 2 1 ]
-"143
-} 0
-"159
-[v _recv_daikin_reader recv_daikin_reader `(v  1 e 1 0 ]
-{
-"162
-[v recv_daikin_reader@a a `uc  1 a 1 16 ]
-"160
-[v recv_daikin_reader@i i `uc  1 a 1 17 ]
-"168
-} 0
-"170
-[v _recv_daikin_frame recv_daikin_frame `(v  1 e 1 0 ]
-{
-[v recv_daikin_frame@size size `uc  1 a 1 wreg ]
-"173
-[v recv_daikin_frame@a a `uc  1 a 1 6 ]
-"171
-[v recv_daikin_frame@i i `uc  1 a 1 5 ]
-"170
-[v recv_daikin_frame@size size `uc  1 a 1 wreg ]
-"172
-[v recv_daikin_frame@size size `uc  1 a 1 4 ]
-"177
-} 0
-"190
-[v _bit_find bit_find `(uc  1 e 1 0 ]
-{
-"191
-[v bit_find@width width `i  1 a 2 1 ]
-"219
-} 0
-"93
+"81
 [v _detect_mode detect_mode `(uc  1 e 1 0 ]
 {
-"98
+"86
 [v detect_mode@mode mode `uc  1 a 1 15 ]
-"114
+"107
 } 0
-"477 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
-[v _printf printf `(i  1 e 2 0 ]
-{
-"545
-[v printf@val val `ui  1 a 2 11 ]
-"512
-[v printf@c c `uc  1 a 1 13 ]
-"521
-[v printf@prec prec `c  1 a 1 10 ]
-"525
-[v printf@flag flag `uc  1 a 1 9 ]
-"479
-[v printf@ap ap `[1]*.4v  1 a 1 8 ]
-"477
-[v printf@f f `*.25DCuc  1 p 2 0 ]
-"1567
-} 0
-"31 D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-[v putch@data data `uc  1 a 1 wreg ]
-[v putch@data data `uc  1 a 1 wreg ]
-[v putch@data data `uc  1 a 1 1 ]
-"33
-} 0
-"132 D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
-[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
-{
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 0 ]
-"139
-} 0
-"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
-{
-"10
-[v ___lwmod@counter counter `uc  1 a 1 13 ]
-"5
-[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
-[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
-"25
-} 0
-"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-{
-"10
-[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
-"11
-[v ___lwdiv@counter counter `uc  1 a 1 7 ]
-"5
-[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
-[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
-"30
-} 0
-"35 D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+"34
 [v _getch getch `(uc  1 e 1 0 ]
 {
-"37
+"36
 } 0
 "113 D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
 [v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
@@ -360,4 +292,130 @@
 {
 [v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "167
+} 0
+"130 D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+[v _SONY SONY `(v  1 e 1 0 ]
+{
+"132
+} 0
+"134
+[v _NEC NEC `(v  1 e 1 0 ]
+{
+"136
+} 0
+"116
+[v _DAIKIN DAIKIN `(v  1 e 1 0 ]
+{
+"128
+} 0
+"179
+[v _recv_daikin_reader recv_daikin_reader `(v  1 e 1 0 ]
+{
+"182
+[v recv_daikin_reader@a a `uc  1 a 1 16 ]
+"180
+[v recv_daikin_reader@i i `uc  1 a 1 17 ]
+"188
+} 0
+"190
+[v _recv_daikin_frame recv_daikin_frame `(v  1 e 1 0 ]
+{
+[v recv_daikin_frame@size size `uc  1 a 1 wreg ]
+"193
+[v recv_daikin_frame@a a `uc  1 a 1 6 ]
+"191
+[v recv_daikin_frame@i i `uc  1 a 1 5 ]
+"190
+[v recv_daikin_frame@size size `uc  1 a 1 wreg ]
+"192
+[v recv_daikin_frame@size size `uc  1 a 1 4 ]
+"197
+} 0
+"109
+[v _AEHA AEHA `(v  1 e 1 0 ]
+{
+"114
+} 0
+"143
+[v _recv_reader recv_reader `(uc  1 e 1 0 ]
+{
+"144
+[v recv_reader@width width `i  1 a 2 1 ]
+"165
+} 0
+"170
+[v _recv_data recv_data `(v  1 e 1 0 ]
+{
+[v recv_data@size size `uc  1 a 1 wreg ]
+"173
+[v recv_data@a a `uc  1 a 1 6 ]
+"171
+[v recv_data@i i `uc  1 a 1 5 ]
+"170
+[v recv_data@size size `uc  1 a 1 wreg ]
+"172
+[v recv_data@size size `uc  1 a 1 4 ]
+"177
+} 0
+"210
+[v _bit_find bit_find `(uc  1 e 1 0 ]
+{
+"211
+[v bit_find@width width `i  1 a 2 1 ]
+"239
+} 0
+"477 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"545
+[v printf@val val `ui  1 a 2 11 ]
+"512
+[v printf@c c `uc  1 a 1 13 ]
+"521
+[v printf@prec prec `c  1 a 1 10 ]
+"525
+[v printf@flag flag `uc  1 a 1 9 ]
+"479
+[v printf@ap ap `[1]*.4v  1 a 1 8 ]
+"477
+[v printf@f f `*.25DCuc  1 p 2 0 ]
+"1567
+} 0
+"30 D:\Documents\GitHub\ir_recver\ir_recver.X\main.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@data data `uc  1 a 1 wreg ]
+[v putch@data data `uc  1 a 1 wreg ]
+[v putch@data data `uc  1 a 1 1 ]
+"32
+} 0
+"132 D:\Documents\GitHub\ir_recver\ir_recver.X\mcc_generated_files/eusart.c
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 0 ]
+"139
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"25
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
 } 0
