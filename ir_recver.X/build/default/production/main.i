@@ -1,17 +1,17 @@
 
 # 1 "main.c"
 
-# 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\xc.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 52 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h"
+# 52 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f1827.h"
 extern volatile unsigned char INDF0 __at(0x000);
 
 asm("INDF0 equ 00h");
@@ -4177,7 +4177,7 @@ extern volatile __bit nTO __at(0x1C);
 extern volatile __bit nWPUEN __at(0x4AF);
 
 
-# 30 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\pic.h"
+# 30 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
@@ -4188,12 +4188,12 @@ __attribute__((__unsupported__("The " "FLASH_WRITE" " macro function is no longe
 
 __attribute__((__unsupported__("The " "FLASH_ERASE" " macro function is no longer supported. Please use the MPLAB X MCC."))) void __flash_erase(unsigned short addr);
 
-# 114 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\eeprom_routines.h"
+# 114 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\eeprom_routines.h"
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 
 
-# 91 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\pic.h"
+# 91 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h"
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 #pragma intrinsic(_delaywdt)
@@ -4213,7 +4213,7 @@ void PIN_MANAGER_Initialize (void);
 # 156
 void PIN_MANAGER_IOC(void);
 
-# 13 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdint.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -4299,13 +4299,13 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 15 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdbool.h"
+# 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 29 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\errno.h"
+# 29 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\errno.h"
 extern int errno;
 
-# 12 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\conio.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -4319,7 +4319,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 15 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdbool.h"
+# 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
 # 75 "mcc_generated_files/eusart.h"
@@ -4380,10 +4380,10 @@ void send_reader();
 void send_data(uint8_t *data, uint8_t size);
 void send_data_ch(char *data, uint8_t size);
 
-# 4 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\__size_t.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\__size_t.h"
 typedef unsigned size_t;
 
-# 7 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdarg.h"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -4392,7 +4392,7 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 43 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdio.h"
+# 43 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdio.h"
 struct __prbuf
 {
 char * ptr;
@@ -4426,30 +4426,34 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 29 "main.c"
+# 31 "main.c"
 void putch(char data){
 EUSART_Write(data);
+}
+
+uint8_t getch(){
+return EUSART_Read();
 }
 
 void recv_data(uint8_t *data, uint8_t size);
 uint8_t recv_reader();
 uint8_t bit_find();
+uint8_t byte_recv();
 void recv_daikin_reader();
 void recv_daikin_frame(uint8_t size);
+uint8_t detect_mode();
 
 void main(void)
 {
 SYSTEM_Initialize();
-printf("init AEHA format\r\n");
-printf("-----------------------------\r\n");
-
-# 50
 do { LATAbits.LATA2 = 1; } while(0);
+
+detect_mode();
+
 uint8_t cnt = 0;
 
 while(1){
 
-# 62
 while(PORTAbits.RA1 == 1){
 _delay((unsigned long)((5)*(32000000/4000000.0)));
 }
@@ -4457,30 +4461,47 @@ _delay((unsigned long)((5)*(32000000/4000000.0)));
 recv_daikin_reader();
 
 recv_reader();
-recv_daikin_frame(64);
-putch('|');
-
-_delay((unsigned long)((34)*(32000000/4000.0)));
-
-recv_reader();
-recv_daikin_frame(64);
-putch('|');
-
-_delay((unsigned long)((34)*(32000000/4000.0)));
-
-recv_reader();
 recv_daikin_frame(160);
+putch('|');
+
+_delay((unsigned long)((35)*(32000000/4000.0)));
+
+recv_reader();
+recv_daikin_frame(152);
 putch('|');
 
 printf("end\r\n");
 printf("[%d]--------------------------\r\n", cnt);
 cnt++;
 
-# 100
+# 90
 }
 }
 
-# 108
+uint8_t detect_mode(){
+printf("IR Reciver\r\n");
+printf("-----------------------------\r\n");
+printf("NEC:N | AEHA:A | DAIKIN:D | SONY:S|(*default:D)\r\n");
+
+uint8_t mode = getch();
+
+if(mode == 'N'){
+printf("Detect NEC\r\n");
+}else if(mode == 'A'){
+printf("Detect AEHA\r\n");
+}else if(mode == 'D'){
+printf("Detect DAIKIN\r\n");
+}else if(mode == 'S'){
+printf("Detect SONY\r\n");
+}else{
+mode = 'D';
+}
+printf("-----------------------------\r\n");
+
+return mode;
+}
+
+# 121
 uint8_t recv_reader(){
 int width = 0;
 while(PORTAbits.RA1 == 0){
@@ -4505,7 +4526,7 @@ return -1;
 return 0;
 }
 
-# 135
+# 148
 void recv_data(uint8_t *data, uint8_t size){
 uint8_t i;
 for(i = 0; i < size; i++){
@@ -4537,7 +4558,7 @@ if(a == 3 || a == 2) break;
 }
 }
 
-# 177
+# 190
 uint8_t bit_find(){
 int width = 0;
 while(PORTAbits.RA1 == 0){
@@ -4545,14 +4566,13 @@ width++;
 _delay((unsigned long)((5)*(32000000/4000000.0)));
 }
 
-# 191
+# 204
 width = 0;
 while(PORTAbits.RA1 == 1){
 width++;
 _delay((unsigned long)((5)*(32000000/4000000.0)));
 
-# 202
-if(width > 1600){
+if(width > 300){
 return 3;
 }
 }
@@ -4562,4 +4582,20 @@ return 0;
 }else{
 return 1;
 }
+}
+
+uint8_t byte_recv(){
+uint8_t mask, i, data;
+data = 0;
+mask = 0x80;
+for(i = 0; i < 8; i++){
+uint8_t a = bit_find();
+if(a == 3) break;
+if(a == 1){
+data |= mask;
+}
+mask >>= 1;
+}
+
+return data;
 }

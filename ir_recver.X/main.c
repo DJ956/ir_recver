@@ -26,39 +26,35 @@ ON(1T) -> OFF(>=8ms)
 #define PARITY_SIZE 4
 #define DATA_SIZE 28
 
+#define SEP "-----------------------------\r\n"
+
 void putch(char data){
     EUSART_Write(data);
+}
+
+uint8_t getch(){
+    return EUSART_Read();
 }
 
 void recv_data(uint8_t *data, uint8_t size);
 uint8_t recv_reader();
 uint8_t bit_find();
+uint8_t byte_recv();
 void recv_daikin_reader();
 void recv_daikin_frame(uint8_t size);
+uint8_t detect_mode();
 
 void main(void)
 {    
     SYSTEM_Initialize();    
-    printf("init AEHA format\r\n");
-    printf("-----------------------------\r\n");
-    
-    // C42DF200518000EB
-    // 310B 7C80 0840 002A
-    //uint8_t data[40] =
-    //    {0,0,1,1,0,1,0,0,0,1,0,0,1,0,1,0,1,0,0,1,0,0,0,0,1,1,1,1,0,1,0,0,0,1,1,0,0,1,0,0};
-    
     LED_1_SetHigh();
-    uint8_t cnt = 0;
     
+    detect_mode();
+    
+    uint8_t cnt = 0;
+        
 	while(1){              
-        /*
-        send_data(data, 40);
         
-        printf("send\r\n");
-        
-        __delay_ms(1000);
-        
-        */
         while(IR_GetValue() == 1){
             __delay_us(5);
         }
@@ -66,19 +62,13 @@ void main(void)
         recv_daikin_reader();
                
         recv_reader();
-        recv_daikin_frame(64);
+        recv_daikin_frame(160);        
         putch('|');        
         
-        __delay_ms(34);
+        __delay_ms(35);
         
         recv_reader();
-        recv_daikin_frame(64);
-        putch('|');
-                
-        __delay_ms(34);
-        
-        recv_reader();
-        recv_daikin_frame(160);
+        recv_daikin_frame(152);        
         putch('|');
         
         printf("end\r\n");
@@ -98,6 +88,29 @@ void main(void)
         printf("\r\n");         
          * */
 	}
+}
+
+uint8_t detect_mode(){
+    printf("IR Reciver Version 1.0.0\r\n");
+    printf(SEP);
+    printf("NEC:N | AEHA:A | DAIKIN:D | SONY:S|(*default:D)\r\n");
+    
+    uint8_t mode = getch();
+    
+    if(mode == 'N'){
+        printf("Detect NEC\r\n");
+    }else if(mode == 'A'){
+        printf("Detect AEHA\r\n");
+    }else if(mode == 'D'){
+        printf("Detect DAIKIN\r\n");
+    }else if(mode == 'S'){
+        printf("Detect SONY\r\n");
+    }else{
+        mode = 'D';
+    }
+    printf(SEP);
+    
+    return mode;
 }
 
 /**
@@ -158,7 +171,7 @@ void recv_daikin_frame(uint8_t size){
     uint8_t i;
     for(i = 0; i < size; i++){
         uint8_t a = bit_find();        
-        putch(a + '0');
+        putch(a + '0');              
         if(a == 3 || a == 2) break;
     }
 }
@@ -192,14 +205,8 @@ uint8_t bit_find(){
 	while(IR_GetValue() == 1){
 		width++;        
 		__delay_us(5);        
-		
-        /*
-		if(width > 1800){
-            printf("end");
-			return 3;
-		}
-         * */
-        if(width > 1600){
+		        
+        if(width > 300){
             return 3;
         }
 	}
@@ -209,4 +216,20 @@ uint8_t bit_find(){
 	}else{
 		return 1;
 	}
+}
+
+uint8_t byte_recv(){
+    uint8_t mask, i, data;
+    data = 0;
+    mask = 0x80;
+    for(i = 0; i < 8; i++){
+        uint8_t a = bit_find();
+        if(a == 3) break;
+        if(a == 1){
+            data |= mask;
+        }
+        mask >>= 1;
+    }
+    
+    return data;
 }

@@ -1,17 +1,17 @@
 
 # 1 "sender.c"
 
-# 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\xc.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\xc8debug.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 52 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1827.h"
+# 52 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f1827.h"
 extern volatile unsigned char INDF0 __at(0x000);
 
 asm("INDF0 equ 00h");
@@ -4177,7 +4177,7 @@ extern volatile __bit nTO __at(0x1C);
 extern volatile __bit nWPUEN __at(0x4AF);
 
 
-# 30 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\pic.h"
+# 30 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
@@ -4188,12 +4188,12 @@ __attribute__((__unsupported__("The " "FLASH_WRITE" " macro function is no longe
 
 __attribute__((__unsupported__("The " "FLASH_ERASE" " macro function is no longer supported. Please use the MPLAB X MCC."))) void __flash_erase(unsigned short addr);
 
-# 114 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\eeprom_routines.h"
+# 114 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\eeprom_routines.h"
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 
 
-# 91 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\pic.h"
+# 91 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h"
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 #pragma intrinsic(_delaywdt)
@@ -4213,7 +4213,7 @@ void PIN_MANAGER_Initialize (void);
 # 156
 void PIN_MANAGER_IOC(void);
 
-# 13 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdint.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -4299,13 +4299,13 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 15 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdbool.h"
+# 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
-# 29 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\errno.h"
+# 29 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\errno.h"
 extern int errno;
 
-# 12 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\conio.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\conio.h"
 extern void init_uart(void);
 
 extern char getch(void);
@@ -4319,7 +4319,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 15 "C:\Program Files\Microchip\xc8\v2.20\pic\include\c90\stdbool.h"
+# 15 "C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
 # 75 "mcc_generated_files/eusart.h"
